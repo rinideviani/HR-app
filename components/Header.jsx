@@ -21,7 +21,7 @@ class Header extends Component {
           <h1 style={defaultStyle} >Employee name</h1>
           <TodoTextInput newTodo
                          onSave={this.handleSave.bind(this)}
-                         placeholder="Add new employee" />
+                         placeholder="Please new employee" />
       </header>
     );
   }
