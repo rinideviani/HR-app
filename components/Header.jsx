@@ -17,11 +17,14 @@ class Header extends Component {
   render() {
     return (
       <header className="header">
-          <AppBar title="RMS" />
-          <h1 style={defaultStyle} >Employee name</h1>
-          <TodoTextInput newTodo
-                         onSave={this.handleSave.bind(this)}
-                         placeholder="Add new employee" />
+          <AppBar title=" " /> 
+            {
+               /* 
+               <h1 style={defaultStyle} >Employee name</h1>
+               <TodoTextInput newTodo
+                onSave={this.handleSave.bind(this)}
+                placeholder="Add new employee" />*/
+            }
       </header>
     );
   }

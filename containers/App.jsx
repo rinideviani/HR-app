@@ -17,8 +17,10 @@ class App extends Component {
       <div>
         <MuiThemeProvider muiTheme={theme}>
           <div>
-            <Header addTodo={actions.addTodo}/>
-            <MainSection todos={todos} actions={actions}/>
+                
+               <Header addTodo={actions.addTodo}/> 
+               
+             <MainSection todos={todos} actions={actions}/>
           </div>
         </MuiThemeProvider>
       </div>
@@ -31,18 +33,23 @@ App.propTypes = {
   actions: PropTypes.object.isRequired
 };
 
+
+//Map the state to props
 function mapStateToProps(state) {
   return {
     todos: state.todos
   };
 }
 
+
+//Map the action to props
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(TodoActions, dispatch)
   };
 }
 
+//connect them component to the Redux Store
 export default connect(
   mapStateToProps,
   mapDispatchToProps
