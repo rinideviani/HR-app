@@ -18,6 +18,7 @@ class Header extends Component {
     return (
       <header className="header">
 <<<<<<< HEAD
+ 
           <AppBar title=" " /> 
             {
                /* 
