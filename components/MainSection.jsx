@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import TodoItem from './TodoItem';
+
 import Footer from './Footer';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters';
 import { Checkbox, List } from 'material-ui';
+
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 
 //added for Selectable list
 
@@ -28,8 +31,11 @@ import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui
 import Badge from 'material-ui/Badge';
 import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import AutoComplete from 'material-ui/AutoComplete';
-
+  
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
+
+import DrawerOpenRightExample from './EmployeeDetailSection';
+import TabsExampleControlled from './EmployeeDetailTab';
 
 let SelectableList = makeSelectable(List);
  
@@ -48,10 +54,11 @@ const iconStyles={
 
 const menuProps = {
   desktop: true,
-  disableAutoFocus: true,
+  disableAutoFocus: true
 };
-
+ 
 function wrapState(ComposedComponent) {
+     
   return class SelectableList extends Component {
     static propTypes = {
       children: PropTypes.node.isRequired,
@@ -86,20 +93,22 @@ function wrapState(ComposedComponent) {
 SelectableList = wrapState(SelectableList);
 
 const MainSection = () => (
+       
+  <div id="mainSection">
     
-  <div>
-    <MobileTearSheet>
+        <div id="leftMenu" style={{margin: "0px 0px 0px 0px", width: "400px",position: "left",top: "0px"  , left: "0px"  }}> 
+             <MobileTearSheet>
      <SelectableList defaultValue={0}>
         <Subheader>
           <Toolbar> 
               <ToolbarGroup> 
+                  <div>
                    <AutoComplete
                      hintText="Search"
                      dataSource={emp}
-                       menuProps={menuProps}
-                    />  
-                  <FontIcon  className="muidocs-icon-action-home"
-                    color={blue500}  />
+                     menuProps={menuProps}
+                       />  </div>
+                 <FontIcon className="material-icons"/>
 
                 <Badge badgeContent={999}
                     primary={true} >  
@@ -113,12 +122,15 @@ const MainSection = () => (
         value={1}
         primaryText={emp[0]}
         leftAvatar={<Avatar src="images/ok-128.jpg" />} 
+          
       /> 
+           
       <ListItem
         value={2}
         primaryText={emp[1]}
         leftAvatar={<Avatar src="images/kerem-128.jpg" />}
-      />
+      
+          />
       <ListItem
         value={3}
         primaryText={emp[2]}
@@ -131,9 +143,15 @@ const MainSection = () => (
       />
     </SelectableList>
     
-   </MobileTearSheet>  
+   </MobileTearSheet>
+           
+    </div> 
+        <div style={{margin: "0px 0px 472px 360px" ,position: "right"}}> <TabsExampleControlled />  
+         
+        </div>
      
-  </div>
+    </div>
+    
 );
  
 export default MainSection;

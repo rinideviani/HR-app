@@ -15,7 +15,10 @@ import RaisedButton from 'material-ui/RaisedButton';
   render() {
     return (
       <div>
-        
+        <RaisedButton
+          label="Toggle Drawer"
+          onClick={this.handleToggle}
+        />
         <Drawer width={900} openSecondary={true} open={this.state.open} >
           <AppBar title="AppBar" />
         </Drawer>
