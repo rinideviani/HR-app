@@ -10,12 +10,13 @@ render:function() {
 const styles = {
   root: {
     marginBottom: 24,
-    marginRight: 24,
+    marginRight: 0,
     maxWidth: 360,
     width: '100%' 
   },
   container: {
-    border: 'solid 1px #d9d9d9',
+    border: 'solid 0px #d9d9d9',
+    
     borderBottom: 'none',
     height: this.props.height,
     overflow: 'hidden' 

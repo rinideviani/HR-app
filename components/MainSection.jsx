@@ -34,7 +34,7 @@ import AutoComplete from 'material-ui/AutoComplete';
   
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 
-import DrawerOpenRightExample from './EmployeeDetailSection';
+ 
 import TabsExampleControlled from './EmployeeDetailTab';
 
 let SelectableList = makeSelectable(List);
@@ -95,9 +95,10 @@ SelectableList = wrapState(SelectableList);
 const MainSection = () => (
        
   <div id="mainSection">
-    
-        <div id="leftMenu" style={{margin: "0px 0px 0px 0px", width: "400px",position: "left",top: "0px"  , left: "0px"  }}> 
-             <MobileTearSheet>
+     
+   <div style={{display: 'flex'}}>
+           
+    <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
      <SelectableList defaultValue={0}>
         <Subheader>
           <Toolbar> 
@@ -141,16 +142,13 @@ const MainSection = () => (
         primaryText={emp[3]}
         leftAvatar={<Avatar src="images/raquelromanp-128.jpg" />}
       />
-    </SelectableList>
-    
+    </SelectableList>    
    </MobileTearSheet>
-           
-    </div> 
-        <div style={{margin: "0px 0px 472px 360px" ,position: "right"}}> <TabsExampleControlled />  
-         
-        </div>
-     
-    </div>
+        
+  <div > <TabsExampleControlled />  </div> 
+       
+ </div>  
+</div>
     
 );
  
