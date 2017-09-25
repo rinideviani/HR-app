@@ -33,34 +33,43 @@ import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
 import AutoComplete from 'material-ui/AutoComplete';
   
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
-
  
-import TabsExampleControlled from './EmployeeDetailTab';
+import  { TabsExampleControlled }  from './EmployeeDetailTab';
+ 
+import Search from 'react-search';
+import Programming from './PageSearch';
 
 let SelectableList = makeSelectable(List);
  
 const iconStyles={
     marginRight:15
 };
+ 
 
-
-  const emp = [
-  'Kerem Suer',
-  'Eric Hoffman',
-  'Raquel Parrad',
-  'Kerem Suer'
+const emp = [
+           {id: 0, name: 'Kerem Suer' },
+            {id: 1, name: 'Eric Hoffman' },
+            {id: 2, name: 'Raquel Parrad' },
+            {id: 3, name: 'Kareema Meidina' }
    
-];
+          ];
 
 const menuProps = {
   desktop: true,
   disableAutoFocus: true
 };
- 
+
+
+
 function wrapState(ComposedComponent) {
      
-  return class SelectableList extends Component {
-    static propTypes = {
+  return class SelectableList extends Component { 
+      
+      
+       HiItems(items) {
+    console.log(items)
+  }
+      static propTypes = {
       children: PropTypes.node.isRequired,
       defaultValue: PropTypes.number.isRequired 
     };
@@ -84,7 +93,7 @@ function wrapState(ComposedComponent) {
           onChange={this.handleRequestChange}
         >
           {this.props.children}
-        </ComposedComponent>
+        </ComposedComponent> 
       );
     }
   };
@@ -99,52 +108,13 @@ const MainSection = () => (
    <div style={{display: 'flex'}}>
            
     <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
-     <SelectableList defaultValue={0}>
-        <Subheader>
-          <Toolbar> 
-              <ToolbarGroup> 
-                  <div>
-                   <AutoComplete
-                     hintText="Search"
-                     dataSource={emp}
-                     menuProps={menuProps}
-                       />  </div>
-                 <FontIcon className="material-icons"/>
-
-                <Badge badgeContent={999}
-                    primary={true} >  
-                </Badge>
-              </ToolbarGroup>
-               
-            </Toolbar>
-        </Subheader>
-        
-      <ListItem
-        value={1}
-        primaryText={emp[0]}
-        leftAvatar={<Avatar src="images/ok-128.jpg" />} 
-          
-      /> 
-           
-      <ListItem
-        value={2}
-        primaryText={emp[1]}
-        leftAvatar={<Avatar src="images/kerem-128.jpg" />}
-      
-          />
-      <ListItem
-        value={3}
-        primaryText={emp[2]}
-        leftAvatar={<Avatar src="images/kolage-128.jpg" />}
-      />
-      <ListItem
-        value={4}
-        primaryText={emp[3]}
-        leftAvatar={<Avatar src="images/raquelromanp-128.jpg" />}
-      />
-    </SelectableList>    
+        <Programming items={emp} />  
    </MobileTearSheet>
-        
+       
+     
+       
+       
+       
   <div > <TabsExampleControlled />  </div> 
        
  </div>  

@@ -8,22 +8,22 @@ const styles = {
     fontSize: 24,
     paddingTop: 16,
     marginBottom: 12,
-    fontWeight: 400,
-  },
+    fontWeight: 400 
+  } 
 };
 
- class TabsExampleControlled extends React.Component {
+ export class TabsExampleControlled extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      value: 'a',
+      value: 'a' 
     };
   }
 
   handleChange = (value) => {
     this.setState({
-      value: value,
+      value: value 
     });
   };
 
@@ -36,7 +36,7 @@ const styles = {
         <Tab label="Profile" value="a">
            <div > <DividerProfileList />  </div>   
         </Tab>
-        <Tab label="Tab B" value="b">
+        <Tab label="History" value="b">
           <div>
             <h2 style={styles.headline}>Controllable Tab B</h2>
             <p>
@@ -47,7 +47,7 @@ const styles = {
           </div>
         </Tab>
             
-            <Tab label="Tab C" value="c">
+            <Tab label="Grade" value="c">
           <div>
             <h2 style={styles.headline}>Controllable Tab C</h2>
             <p>
@@ -58,7 +58,7 @@ const styles = {
           </div>
         </Tab>
             
-            <Tab label="Tab D" value="d">
+            <Tab label="Family" value="d">
           <div>
             <h2 style={styles.headline}>Controllable Tab D</h2>
             <p>
@@ -69,7 +69,7 @@ const styles = {
           </div>
         </Tab>
             
-            <Tab label="Tab E" value="e">
+            <Tab label="Address" value="e">
           <div>
             <h2 style={styles.headline}>Controllable Tab E</h2>
             <p>
@@ -80,7 +80,7 @@ const styles = {
           </div>
         </Tab>
             
-            <Tab label="Tab F" value="f">
+            <Tab label="Location" value="f">
           <div>
             <h2 style={styles.headline}>Controllable Tab F</h2>
             <p>
@@ -94,5 +94,4 @@ const styles = {
     );
   }
 }
-
-export default TabsExampleControlled;
+ 
