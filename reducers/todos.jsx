@@ -1,10 +1,21 @@
 import { ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED } from '../constants/ActionTypes';
+import { LOAD_EMPLOYEES_SUCCESS  } from '../constants/ActionTypes';
 
-const initialState = [{
+
+
+/*const initialState = [{
   text: 'Name1',
   completed: false,
   id: 0
-}];
+}];*/
+
+
+
+const initialState=[{
+    id:1,
+    name:'Kerem Suer'
+
+}]
 
 export default function todos(state = initialState, action) {
   switch (action.type) {
@@ -42,6 +53,12 @@ export default function todos(state = initialState, action) {
 
   case CLEAR_COMPLETED:
     return state.filter(todo => todo.completed === false);
+
+
+//case added for employee 
+  case  LOAD_EMPLOYEES_SUCCESS: 
+    return action.employees
+
 
   default:
     return state;

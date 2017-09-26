@@ -6,18 +6,19 @@ let SelectableList = makeSelectable(List);
 
 const jumbotronStyle = {
 	backgroundColor: '#337ab7',
+    fontSize: 20 
 };
 
 const textStyle = {
-	color: '#fff',
+	color: '#fff'  
 };
 
-export default class Programming extends Component{
+export default class PageSearch extends Component{
 
 	constructor(){
         super();
         this.state = {
-            term: "",
+            term: "" 
         };
     }
 
@@ -58,25 +59,19 @@ export default class Programming extends Component{
 				     		languages.map(function(l){
                             	return <SelectableList defaultValue={0}   className="list-group-item" key={l.name}>           
                                         
-      <ListItem
-          value={l.name}
-       primaryText=  {l.name}
-          leftAvatar={<Avatar src="images/ok-128.jpg" />} 
+                                    <ListItem
+                                        value={l.id}
+                                        primaryText=  {l.name}
+                                        leftAvatar={<Avatar src="images/ok-128.jpg" />} 
           
-      /> 
-                                   
-                                    
-                                      </SelectableList>            
-                                
-                                
+                                    />     
+                                </SelectableList>    
                         	})
 
                         }
 						</ul>
 
 				    </div>
-                      
-                       
                         
 
 				  </div>

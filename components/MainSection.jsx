@@ -37,7 +37,9 @@ import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import  { TabsExampleControlled }  from './EmployeeDetailTab';
  
 import Search from 'react-search';
-import Programming from './PageSearch';
+import PageSearch from './PageSearch';
+
+import EmployeesPage  from './EmployeePage';
 
 let SelectableList = makeSelectable(List);
  
@@ -47,7 +49,7 @@ const iconStyles={
  
 
 const emp = [
-           {id: 0, name: 'Kerem Suer' },
+            {id: 0, name: 'Kerem Suer' },
             {id: 1, name: 'Eric Hoffman' },
             {id: 2, name: 'Raquel Parrad' },
             {id: 3, name: 'Kareema Meidina' }
@@ -90,8 +92,8 @@ function wrapState(ComposedComponent) {
       return (
         <ComposedComponent
           value={this.state.selectedIndex}
-          onChange={this.handleRequestChange}
-        >
+          onChange={this.handleRequestChange} >
+
           {this.props.children}
         </ComposedComponent> 
       );
@@ -108,16 +110,15 @@ const MainSection = () => (
    <div style={{display: 'flex'}}>
            
     <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
-        <Programming items={emp} />  
-   </MobileTearSheet>
-       
-     
-       
+        <PageSearch items={emp} />  
+    </MobileTearSheet>
        
        
   <div > <TabsExampleControlled />  </div> 
-       
+      
+
  </div>  
+}
 </div>
     
 );
