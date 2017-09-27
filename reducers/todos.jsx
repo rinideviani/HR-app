@@ -1,23 +1,18 @@
 import { ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED } from '../constants/ActionTypes';
-import { LOAD_EMPLOYEES_SUCCESS  } from '../constants/ActionTypes';
+ 
 
 
-
-/*const initialState = [{
+/*
+ const users = [{
   text: 'Name1',
   completed: false,
   id: 0
-}];*/
+}]; */
+ 
 
+const users =[];
 
-
-const initialState=[{
-    id:1,
-    name:'Kerem Suer'
-
-}]
-
-export default function todos(state = initialState, action) {
+export default function todos(state =  users, action) {
   switch (action.type) {
   case ADD_TODO:
     return [{
@@ -55,12 +50,27 @@ export default function todos(state = initialState, action) {
     return state.filter(todo => todo.completed === false);
 
 
-//case added for employee 
-  case  LOAD_EMPLOYEES_SUCCESS: 
-    return action.employees
+ case "FETCH_USERS":{
+      return {...state, fetching: true}
+    }
+    case "FETCH_USERS_FULFILLED":{
+      return {
+              ...state, 
+              users:action.payload
+              }
+    }
+     case "FETCH_USERS_REJECTED":{
+       return {
+                ...state,
+                fetching: false,
+                error: action.payload
+              }
+     }
 
+
+ 
 
   default:
     return state;
-  }
-}
+ }
+ }

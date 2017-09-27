@@ -37,9 +37,10 @@ import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import  { TabsExampleControlled }  from './EmployeeDetailTab';
  
 import Search from 'react-search';
-import PageSearch from './PageSearch';
-
-import EmployeesPage  from './EmployeePage';
+import PageSearch from './PageSearch'; 
+import UserList from './UserList';
+import {fetchUsers} from '../actions/userActions';
+import {connect} from 'react-redux';
 
 let SelectableList = makeSelectable(List);
  
@@ -64,13 +65,17 @@ const menuProps = {
 
 
 function wrapState(ComposedComponent) {
+
+connect((store) => {
+  // console.log("ins store",store.userReducer.users);
+  return {
+    users: store.userReducer.users
+  }
+})
+
      
   return class SelectableList extends Component { 
-      
-      
-       HiItems(items) {
-    console.log(items)
-  }
+ 
       static propTypes = {
       children: PropTypes.node.isRequired,
       defaultValue: PropTypes.number.isRequired 
@@ -89,13 +94,17 @@ function wrapState(ComposedComponent) {
     };
 
     render() {
+       
       return (
         <ComposedComponent
           value={this.state.selectedIndex}
           onChange={this.handleRequestChange} >
 
           {this.props.children}
+
         </ComposedComponent> 
+
+
       );
     }
   };
@@ -115,10 +124,10 @@ const MainSection = () => (
        
        
   <div > <TabsExampleControlled />  </div> 
+  <div > <UserList />  </div> 
       
-
  </div>  
-}
+ 
 </div>
     
 );

@@ -26,18 +26,4 @@ export function clearCompleted() {
 }
 
 
-//added for employees
-
-export function loadEmployees() {  
-  return function(dispatch) {
-    return EmployeesApi.getAllEmployees().then(employees => {
-      dispatch(loadEmployeesSuccess(employees));
-    }).catch(error => {
-      throw(error);
-    });
-  };
-}
-
-export function loadEmployeesSuccess(employees){
-	return {type: 'LOAD_EMPLOYEES_SUCCESS',employees};
-}
+ 

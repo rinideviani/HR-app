@@ -59,9 +59,7 @@ const DividerProfileList = () => (
       <TextField
       hintText="Email"  
     /><br />
-          
-    
-     
+           
     
     </MobileTearSheet>
   </div>
