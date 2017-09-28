@@ -9,9 +9,14 @@ import Avatar from 'material-ui/Avatar';
  
 import {connect} from 'react-redux';  
 import * as TodoActions from '../actions/todos'; 
+ 
+
+ 
 
 
 const DividerProfileList = () => (
+  
+
   <div style={{display: 'flex'}}>
     <MobileTearSheet height={250}>
      <TextField

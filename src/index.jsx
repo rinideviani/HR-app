@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import App from '../containers/App';
 import configureStore from '../store/configureStore';
-
+import store from '../store/store'
  
 //Needed for React Developer Tools
 window.React = React;
@@ -16,11 +16,10 @@ window.React = React;
 //https://github.com/zilverline/react-tap-event-plugin
 injectTapEventPlugin();
 
-const store = configureStore();
+//const store = configureStore();
 
 ReactDOM.render(
-  <Provider store={store}>
-  	 
+  <Provider store={store}> 
     <App />
   </Provider>,
   document.getElementById("root")

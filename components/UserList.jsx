@@ -1,23 +1,43 @@
-import React from "react";
-import ReactDOM from "react-dom"
-import {connect} from 'react-redux';
-import {fetchUsers} from '../actions/userActions';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-connect((store) => {
-  // console.log("ins store",store.userReducer.users);
-  return {
-    users: store.todos.users
-  }
-})
+import User from './User';
 
- 
-export default class UserList extends React.Component{ 
+import {connect} from "react-redux"; 
+
+import {fetchUsers} from "../actions/UserActions";
+
+
+
+
+
+
+export default class UserList extends React.Component{
+  
+	 
+
   render(){
-  	console.log('----');
-	console.log(this.props.users);
+ 
+  
+    if(Object.getOwnPropertyNames(this.props.users).length === 0){
+      return (<div></div>)
+    }
+    const userNodes = this.props.users.map(function(user){
+      return (
+        <User firstname={user.first_name} lastname={user.last_name}
+        key={user.id} avatar={user.avatar}>
+        {user.first_name}
+        </User>
+      )
+    })
+ 
+    
     return (
       <div>
-      UserList Component
+        <center>
+        <h1 className="user-profile">User Profiles</h1>
+        {userNodes}
+      </center>
       </div>
     )
   }

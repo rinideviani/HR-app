@@ -1,3 +1,6 @@
+ //mainSection
+
+
 import React, { Component, PropTypes } from 'react';
 import TodoItem from './TodoItem';
 
@@ -38,9 +41,11 @@ import  { TabsExampleControlled }  from './EmployeeDetailTab';
  
 import Search from 'react-search';
 import PageSearch from './PageSearch'; 
-import UserList from './UserList';
+import UserPage   from './UserPage';
 import {fetchUsers} from '../actions/userActions';
 import {connect} from 'react-redux';
+
+
 
 let SelectableList = makeSelectable(List);
  
@@ -63,17 +68,12 @@ const menuProps = {
 };
 
 
+ 
+
+
 
 function wrapState(ComposedComponent) {
-
-connect((store) => {
-  // console.log("ins store",store.userReducer.users);
-  return {
-    users: store.userReducer.users
-  }
-})
-
-     
+    
   return class SelectableList extends Component { 
  
       static propTypes = {
@@ -82,9 +82,9 @@ connect((store) => {
     };
 
     componentWillMount() {
-      this.setState({
-        selectedIndex: this.props.defaultValue 
-      });
+      this.setState({ selectedIndex: this.props.defaultValue 
+      }); 
+       
     }
 
     handleRequestChange = (event, index) => {
@@ -94,14 +94,12 @@ connect((store) => {
     };
 
     render() {
-       
+        
       return (
         <ComposedComponent
           value={this.state.selectedIndex}
-          onChange={this.handleRequestChange} >
-
-          {this.props.children}
-
+          onChange={this.handleRequestChange} > 
+          {this.props.children} 
         </ComposedComponent> 
 
 
@@ -123,13 +121,17 @@ const MainSection = () => (
     </MobileTearSheet>
        
        
-  <div > <TabsExampleControlled />  </div> 
-  <div > <UserList />  </div> 
+  <div > <TabsExampleControlled />   </div> 
+
+   <div > <UserPage />   </div> 
+ 
       
  </div>  
- 
+   
 </div>
     
 );
  
 export default MainSection;
+
+

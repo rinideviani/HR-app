@@ -1,4 +1,4 @@
-export default function todos(state={
+export default function reducer(state={
   users:[],
   fetching: false,
   fetched: false,
