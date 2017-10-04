@@ -1,36 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import { connect } from "react-redux";
-import UserList from './UserList'
-
-import {fetchUsers} from "../actions/UserActions"
- 
-
-@connect(
-  (configureStore) => {
-   //console.log("ins store",configureStore.rootReducer );
-  return {
-    users: configureStore.rootReducer
-  }}
-
-  )
-
+import { connect } from 'react-redux';
+import UserList from './UserList';
+import {fetchUsers} from '../actions/UserActions';
+  
 
 export default class UserPage extends React.Component{
+
+  constructor(){
+    super(); 
+    this.state={ users: [] };
+  }
     
- componentWillMount(){
-      this.props.dispatch(fetchUsers());
+
+  getUsersDetail(){
+    fetchUsers().then((users) => {
+      this.setState({ users });
+    });
   }
 
-  render(){
+ componentDidMount(){
+  this.getUsersDetail();
+ }
 
-    console.log('---');
-    console.log(this.props);
-    return (
+  render(){  
+
+   const { users } = this.state;
+   console.log('storing...', this.state.users);
+ 
+    return ( 
       <div>
-      
+        <UserList users = {this.state.users} />
       </div>
+ 
     )
   }
 }

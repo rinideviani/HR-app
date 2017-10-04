@@ -1,26 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import User from './User';
-
-import {connect} from "react-redux"; 
-
-import {fetchUsers} from "../actions/UserActions";
-
-
-
-
-
-
-export default class UserList extends React.Component{
-  
-	 
-
-  render(){
+import User from './User'; 
  
+ export default class UserList extends React.Component{ 
+  render(){
   
     if(Object.getOwnPropertyNames(this.props.users).length === 0){
-      return (<div></div>)
+      return (<div></div>) 
     }
     const userNodes = this.props.users.map(function(user){
       return (
@@ -35,10 +21,11 @@ export default class UserList extends React.Component{
     return (
       <div>
         <center>
-        <h1 className="user-profile">User Profiles</h1>
+        <h1 className="user-profile"> </h1>
         {userNodes}
       </center>
       </div>
     )
   }
 }
+

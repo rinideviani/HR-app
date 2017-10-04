@@ -1,7 +1,7 @@
 import React from 'react';
-import {Tabs, Tab} from 'material-ui/Tabs';
-
-import DividerProfileList from './ProfileDetail';
+import {Tabs, Tab} from 'material-ui/Tabs'; 
+import ProfileDetail from './ProfileDetail'; 
+import { UserList } from './UserList';
 
 const styles = {
   headline: {
@@ -12,7 +12,7 @@ const styles = {
   } 
 };
 
- export class TabsExampleControlled extends React.Component {
+ export class EmployeeDetailTab extends React.Component {
 
   constructor(props) {
     super(props);
@@ -34,7 +34,7 @@ const styles = {
         onChange={this.handleChange}
       >
         <Tab label="Profile" value="a">
-           <div > <DividerProfileList />  </div>   
+           <div > <ProfileDetail />  </div>   
         </Tab>
         <Tab label="History" value="b">
           <div>

@@ -10,8 +10,7 @@ import { Checkbox, List } from 'material-ui';
 
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 
-//added for Selectable list
-
+//added for Selectable list 
 import {ListItem, makeSelectable} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import Paper from 'material-ui/Paper';
@@ -37,14 +36,14 @@ import AutoComplete from 'material-ui/AutoComplete';
   
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
  
-import  { TabsExampleControlled }  from './EmployeeDetailTab';
+import  { EmployeeDetailTab }  from './EmployeeDetailTab';
  
 import Search from 'react-search';
 import PageSearch from './PageSearch'; 
 import UserPage   from './UserPage';
 import {fetchUsers} from '../actions/userActions';
 import {connect} from 'react-redux';
-
+import axios from 'axios'; 
 
 
 let SelectableList = makeSelectable(List);
@@ -55,27 +54,20 @@ const iconStyles={
  
 
 const emp = [
-            {id: 0, name: 'Kerem Suer' },
-            {id: 1, name: 'Eric Hoffman' },
-            {id: 2, name: 'Raquel Parrad' },
-            {id: 3, name: 'Kareema Meidina' }
-   
+            {id: 0, name: 'George Bluth'},
+            {id: 1, name: 'Janet Weaver'},
+            {id: 2, name: 'Emma Wong'} 
           ];
 
 const menuProps = {
   desktop: true,
   disableAutoFocus: true
 };
-
-
  
-
-
 
 function wrapState(ComposedComponent) {
     
-  return class SelectableList extends Component { 
- 
+  return class SelectableList extends Component {  
       static propTypes = {
       children: PropTypes.node.isRequired,
       defaultValue: PropTypes.number.isRequired 
@@ -83,9 +75,8 @@ function wrapState(ComposedComponent) {
 
     componentWillMount() {
       this.setState({ selectedIndex: this.props.defaultValue 
-      }); 
-       
-    }
+      });  
+     }
 
     handleRequestChange = (event, index) => {
       this.setState({
@@ -100,9 +91,7 @@ function wrapState(ComposedComponent) {
           value={this.state.selectedIndex}
           onChange={this.handleRequestChange} > 
           {this.props.children} 
-        </ComposedComponent> 
-
-
+         </ComposedComponent>  
       );
     }
   };
@@ -114,23 +103,22 @@ const MainSection = () => (
        
   <div id="mainSection">
      
-   <div style={{display: 'flex'}}>
+    <div style={{display: 'flex'}}>
            
-    <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
+     <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
         <PageSearch items={emp} />  
-    </MobileTearSheet>
-       
-       
-  <div > <TabsExampleControlled />   </div> 
+     </MobileTearSheet> 
 
-   <div > <UserPage />   </div> 
- 
+     <div > <EmployeeDetailTab /> </div> 
+
       
- </div>  
+  <div > <UserPage /> </div> 
+      
+     </div>  
    
-</div>
+   </div>
     
-);
+ );
  
 export default MainSection;
 

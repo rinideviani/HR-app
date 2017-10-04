@@ -1,14 +1,14 @@
 import axios from "axios";
+import React from 'react';
 
-export function fetchUsers(){
+const BASE_URL='http://localhost:9000';
 
-  return function(dispatch){
-    axios.get('https://reqres.in/api/users?page=1')
-        .then((response) =>{
-          dispatch({type:'FETCH_USERS_FULFILLED',payload:response.data.data});
-        })
-        .catch((err) => {
-          dispatch({type:'FETCH_USERS_REJECTED',payload:err})
-        })
-  }
+export{fetchUsers};
+
+function fetchUsers(){
+
+	const url=`${BASE_URL}/emp`;
+	return axios.get(url).then(response => response.data);
+
+  
 }
