@@ -1,6 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { connect } from 'react-redux';
+import ReactDOM from "react-dom"; 
 import UserList from './UserList';
 import {fetchUsers} from '../actions/UserActions';
   

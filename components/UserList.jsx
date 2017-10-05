@@ -8,6 +8,7 @@ import User from './User';
     if(Object.getOwnPropertyNames(this.props.users).length === 0){
       return (<div></div>) 
     }
+   
     const userNodes = this.props.users.map(function(user){
       return (
         <User firstname={user.first_name} lastname={user.last_name}
@@ -16,8 +17,7 @@ import User from './User';
         </User>
       )
     })
- 
-    
+  
     return (
       <div>
         <center>

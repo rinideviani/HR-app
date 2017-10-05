@@ -13,9 +13,8 @@ const textStyle = {
 	color: '#fff'  
 };
 
-export default class PageSearch extends Component{
-
-	constructor(){
+export default class PageSearch extends Component{ 
+    constructor(){
         super();
         this.state = {
             term: "" 
@@ -23,12 +22,10 @@ export default class PageSearch extends Component{
     }
 
     render(){
-
         let languages = this.props.items,
         	term = this.state.term.trim().toLowerCase();
 
         if(term.length > 0){
-
             languages = languages.filter(function(l){
                 return l.name.toLowerCase().match( term );
             });
@@ -36,9 +33,7 @@ export default class PageSearch extends Component{
         }
 
     	return(
-
     		<div>
-
 	    		<div className="jumbotron text-center" style={jumbotronStyle}>
 				  <h1 style={textStyle}><i className="fa fa-code"></i>  </h1> 
 				</div>

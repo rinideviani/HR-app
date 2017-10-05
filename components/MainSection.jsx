@@ -36,14 +36,9 @@ import AutoComplete from 'material-ui/AutoComplete';
   
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
  
-import  { EmployeeDetailTab }  from './EmployeeDetailTab';
- 
-import Search from 'react-search';
+import { EmployeeDetailTab }  from './EmployeeDetailTab'; 
 import PageSearch from './PageSearch'; 
-import UserPage   from './UserPage';
-import {fetchUsers} from '../actions/userActions';
-import {connect} from 'react-redux';
-import axios from 'axios'; 
+ 
 
 
 let SelectableList = makeSelectable(List);
@@ -111,9 +106,6 @@ const MainSection = () => (
 
      <div > <EmployeeDetailTab /> </div> 
 
-      
-  <div > <UserPage /> </div> 
-      
      </div>  
    
    </div>

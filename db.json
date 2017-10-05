@@ -1,11 +1,21 @@
- 
-
 { 
-"emp":[
-{"id":1,"first_name":"George","last_name":"Bluth",
-"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"},
-{"id":2,"first_name":"Janet","last_name":"Weaver",
-"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},
-{"id":3,"first_name":"Emma","last_name":"Wong",
-"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"}
-]}
+	"emp":[
+		{ 	"id":1,
+			"firstName":"George",
+			"lastName":"Bluth",
+			"gender":"M",
+			"dob":"1988-11-11",
+			"nationality":"India",
+			"maritalStatus":"Married",
+			"phone":"332 321",
+			"subdivision":"CDC",
+			"status":"Full Time",
+			"suspendDate":"-",
+			"hiredDate":"2017-10-13",
+			"grade":"PG",
+			"division":"CDC",
+			"email":"mail@gee.com", 
+			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+		} 
+	]
+}
