@@ -1,18 +1,10 @@
-import React from 'react';
-import Divider from 'material-ui/Divider';
-import {List, ListItem} from 'material-ui/List';
-import MobileTearSheet from './MobileTearSheet';
-import TextField from 'material-ui/TextField';
-import DatePicker from 'material-ui/DatePicker'; 
-import Avatar from 'material-ui/Avatar'; 
-import User from './User'; 
-
+import React from 'react'; 
+import EmployeeProfileDisplay from './EmployeeProfileDisplay';  
 import {fetchUsers} from '../actions/UserActions';
 
 
-export default class ProfileDetail extends React.Component{
-  
-
+export default class EmployeeProfileContainer extends React.Component{
+   
   constructor(){
     super(); 
     this.state={ users: [] };
@@ -37,7 +29,7 @@ if(Object.getOwnPropertyNames(this.state.users).length === 0){
     } 
     const userNodes = this.state.users.map(function(user,index){
       return (
-        <User 
+        <EmployeeProfileDisplay 
         key={user.id}
         firstName={user.firstName}
         lastName={user.lastName}
@@ -55,7 +47,7 @@ if(Object.getOwnPropertyNames(this.state.users).length === 0){
         email={user.email}
         avatar={user.avatar}>
          
-        </User>
+        </EmployeeProfileDisplay>
       )
     }) 
 

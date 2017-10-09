@@ -28,8 +28,7 @@ export default class PageSearch extends Component{
         if(term.length > 0){
             languages = languages.filter(function(l){
                 return l.name.toLowerCase().match( term );
-            });
-
+            }); 
         }
 
     	return(
@@ -38,45 +37,36 @@ export default class PageSearch extends Component{
 				  <h1 style={textStyle}><i className="fa fa-code"></i>  </h1> 
 				</div>
 	  
-				<div className="container">
-
-				  <div className="row text-center">
-
-				    <div className="col-md-4 col-md-offset-4">
- 
-				    	<input className="form-control" value={this.state.term} onChange={e => this.setState({term: e.target.value})} placeholder="Search" />
-                        <br/> 
-                        
-				    	<hr/> 
-
-				     	<ul className="list-group">
+				<div className="container"> 
+				  <div className="row text-center"> 
+				    <div className="col-md-4 col-md-offset-4"> 
+				    	<input className="form-control" 
+               value={this.state.term} 
+               onChange={e => this.setState({term: e.target.value})}
+               placeholder="Search" /> 
+              <br/>        
+				    	<hr/>  
+              <ul className="list-group">
 				     	{ 
 				     		languages.map(function(l){
-                            	return <SelectableList defaultValue={0}   className="list-group-item" key={l.name}>           
-                                        
-                                    <ListItem
-                                        value={l.id}
-                                        primaryText=  {l.name}
-                                        leftAvatar={<Avatar src="images/ok-128.jpg" />} 
-          
-                                    />     
-                                </SelectableList>    
-                        	})
-
-                        }
+                  return <SelectableList defaultValue={0}
+                  className="list-group-item" key={l.name}>           
+                    <ListItem
+                      value={l.id}
+                      primaryText=  {l.name}
+                      leftAvatar={<Avatar src="images/ok-128.jpg" />} 
+                    />     
+                  </SelectableList>    
+                })
+              }
 						</ul>
 
-				    </div>
-                        
-
-				  </div>
-
+				  </div>    
 				</div>
-
 			</div>
+		</div>
+  );
 
-    	);
-
-    }
+  }
 
 }

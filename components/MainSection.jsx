@@ -40,13 +40,13 @@ import { EmployeeDetailTab }  from './EmployeeDetailTab';
 import PageSearch from './PageSearch'; 
  
 
+import {fetchUsers} from '../actions/UserActions';
 
 let SelectableList = makeSelectable(List);
  
 const iconStyles={
     marginRight:15
 };
- 
 
 const emp = [
             {id: 0, name: 'George Bluth'},
@@ -58,11 +58,11 @@ const menuProps = {
   desktop: true,
   disableAutoFocus: true
 };
- 
-
+  
 function wrapState(ComposedComponent) {
     
-  return class SelectableList extends Component {  
+  return class SelectableList extends Component {   
+ 
       static propTypes = {
       children: PropTypes.node.isRequired,
       defaultValue: PropTypes.number.isRequired 
@@ -79,8 +79,7 @@ function wrapState(ComposedComponent) {
       });
     };
 
-    render() {
-        
+    render() { 
       return (
         <ComposedComponent
           value={this.state.selectedIndex}
@@ -96,21 +95,18 @@ SelectableList = wrapState(SelectableList);
 
 const MainSection = () => (
        
-  <div id="mainSection">
-     
-    <div style={{display: 'flex'}}>
-           
+  <div id="mainSection"> 
+    <div style={{display: 'flex'}}> 
      <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
-        <PageSearch items={emp} />  
+         <PageSearch items={emp} />  
      </MobileTearSheet> 
 
-     <div > <EmployeeDetailTab /> </div> 
+      <div > <EmployeeDetailTab /> </div> 
 
-     </div>  
-   
-   </div>
+    </div>  
+  </div>
     
- );
+);
  
 export default MainSection;
 

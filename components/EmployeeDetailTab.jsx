@@ -1,8 +1,6 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs'; 
-import ProfileDetail from './ProfileDetail'; 
-import { UserList } from './UserList';
-
+import EmployeeProfileContainer from './EmployeeProfileContainer';  
 const styles = {
   headline: {
     fontSize: 24,
@@ -31,11 +29,12 @@ const styles = {
     return (
       <Tabs
         value={this.state.value}
-        onChange={this.handleChange}
-      >
+        onChange={this.handleChange} >
+        
         <Tab label="Profile" value="a">
-           <div > <ProfileDetail />  </div>   
+           <div > <EmployeeProfileContainer />  </div>   
         </Tab>
+
         <Tab label="History" value="b">
           <div>
             <h2 style={styles.headline}>Controllable Tab B</h2>

@@ -10,15 +10,13 @@ import DatePicker from 'material-ui/DatePicker';
 import Avatar from 'material-ui/Avatar'; 
   
 
-export default class User extends React.Component{ 
+export default class EmployeeProfileDisplay extends React.Component{ 
  
   render(){  
       console.log("userprops",this.props);
 
       const hiredDate = new Date(this.props.hiredDate); 
-      const dob = new Date(this.props.dob);
-
- 
+      const dob = new Date(this.props.dob); 
     return( 
 
 <div style={{display: 'flex'}}>
