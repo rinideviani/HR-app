@@ -1,8 +1,7 @@
  //mainSection
 
 
-import React, { Component, PropTypes } from 'react';
-import TodoItem from './TodoItem';
+import React, { Component, PropTypes } from 'react'; 
 
 import Footer from './Footer';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters';
@@ -37,10 +36,11 @@ import AutoComplete from 'material-ui/AutoComplete';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
  
 import { EmployeeDetailTab }  from './EmployeeDetailTab'; 
-import PageSearch from './PageSearch'; 
- 
+import PageSearch  from './PageSearch';  
 
 import {fetchUsers} from '../actions/UserActions';
+
+
 
 let SelectableList = makeSelectable(List);
  
@@ -48,25 +48,30 @@ const iconStyles={
     marginRight:15
 };
 
-const emp = [
-            {id: 0, name: 'George Bluth'},
-            {id: 1, name: 'Janet Weaver'},
-            {id: 2, name: 'Emma Wong'} 
-          ];
+ 
 
 const menuProps = {
   desktop: true,
   disableAutoFocus: true
 };
-  
-function wrapState(ComposedComponent) {
-    
-  return class SelectableList extends Component {   
+
+
+export default class MainSection extends React.Component{
  
-      static propTypes = {
-      children: PropTypes.node.isRequired,
-      defaultValue: PropTypes.number.isRequired 
-    };
+   
+  constructor(){
+    super(); 
+    this.state={ users: [] };
+  } 
+  getUsersDetail(){
+    fetchUsers().then((users) => {
+      this.setState({ users });
+    });
+  }
+
+ componentDidMount(){
+  this.getUsersDetail();
+ } 
 
     componentWillMount() {
       this.setState({ selectedIndex: this.props.defaultValue 
@@ -77,37 +82,30 @@ function wrapState(ComposedComponent) {
       this.setState({
         selectedIndex: index 
       });
-    };
+    }; 
 
-    render() { 
-      return (
-        <ComposedComponent
-          value={this.state.selectedIndex}
-          onChange={this.handleRequestChange} > 
-          {this.props.children} 
-         </ComposedComponent>  
-      );
-    }
-  };
-}
 
-SelectableList = wrapState(SelectableList);
-
-const MainSection = () => (
-       
-  <div id="mainSection"> 
-    <div style={{display: 'flex'}}> 
-     <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
-         <PageSearch items={emp} />  
-     </MobileTearSheet> 
-
-      <div > <EmployeeDetailTab /> </div> 
-
-    </div>  
-  </div>
-    
-);
+  render(){
  
-export default MainSection;
+ const { users } = this.state;
+  // console.log('mainSection...', this.state.users); 
+ 
 
+    return(
+        <div id="mainSection"> 
+          <div style={{display: 'flex'}}> 
 
+              <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
+                 <PageSearch  items={this.state.users}/>  
+              </MobileTearSheet>   
+          
+            <div > <EmployeeDetailTab /> </div> 
+            
+          </div>  
+        </div> 
+    ) 
+  }
+
+}
+  
+ 

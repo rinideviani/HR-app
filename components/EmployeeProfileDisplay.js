@@ -13,8 +13,7 @@ import Avatar from 'material-ui/Avatar';
 export default class EmployeeProfileDisplay extends React.Component{ 
  
   render(){  
-      console.log("userprops",this.props);
-
+      //console.log("userprops",this.props); 
       const hiredDate = new Date(this.props.hiredDate); 
       const dob = new Date(this.props.dob); 
     return( 
@@ -118,10 +117,7 @@ export default class EmployeeProfileDisplay extends React.Component{
         <Avatar src={this.props.avatar} />
          
 </div> 
-
-
-
-
+ 
 
       )
 
