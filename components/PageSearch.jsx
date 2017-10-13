@@ -3,6 +3,8 @@ import {ListItem, makeSelectable, List} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar'; 
 import {fetchUsers} from '../actions/UserActions';
 
+import EmployeeNameList from './EmployeeNameList'
+
 let SelectableList = makeSelectable(List);
 
 const jumbotronStyle = {
@@ -13,31 +15,30 @@ const jumbotronStyle = {
 const textStyle = {
 	color: '#fff'  
 };
- 
-
- 
+  
 export default class PageSearch extends Component{ 
     constructor(){
         super();
-        this.state={ inputText: "" };
-    }
-  
+        this.state={ inputText: "" };   
+    }   
+
     render(){  
+      let that=this;
+      //console.log('props Search',that.props.items);
         let languages = this.props.items, 
-        inputText = this.state.inputText.trim().toLowerCase(); 
- 
+        inputText = this.state.inputText.trim().toLowerCase();  
         if(inputText.length > 0){
             languages = languages.filter(function(emp){
                 const fullName = emp.firstName+emp.lastName;
                 return fullName.toLowerCase().match(inputText);
             }); 
         } 
-
+  
     	return(
     		<div>
 	    		<div className="jumbotron text-center" style={jumbotronStyle}>
 				  <h1 style={textStyle}><i className="fa fa-code"></i>  </h1> 
-				</div>
+				  </div>
 	  
 				<div className="container"> 
 				  <div className="row text-center"> 
@@ -48,22 +49,18 @@ export default class PageSearch extends Component{
                placeholder="Search" /> 
               <br/>        
 				    	<hr/>  
-              <ul className="list-group">
-				     	{ 
-				     		languages.map(function(emp,index){ 
-                  return(<SelectableList defaultValue={0}
-                  className="list-group-item" key={emp.id}>           
-                    <ListItem
-                      value={emp.id}
-                      primaryText={emp.firstName+" "+emp.lastName}
-                      leftAvatar={<Avatar src={emp.avatar} />} 
-                    />     
-                  </SelectableList>   
-                  ) 
-                })
-              }
-						</ul>
+              
+              { 
+                languages.map(function(emp){ 
 
+                  return(
+                     <EmployeeNameList key={emp.id} 
+                     emp={that.props.items}   
+                      />   
+                  ) 
+                }) 
+              } 
+						  
 				  </div>    
 				</div>
 			</div>

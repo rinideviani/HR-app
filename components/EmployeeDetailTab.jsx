@@ -1,6 +1,17 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs'; 
-import EmployeeProfileContainer from './EmployeeProfileContainer';  
+import EmployeeProfileContainer from './EmployeeProfileContainer'; 
+
+//icons
+import HomeIcon from 'react-icons/lib/fa/home'
+import IoPerson from 'react-icons/lib/io/person'
+import IoClock from 'react-icons/lib/io/clock'
+import GoLocation from 'react-icons/lib/go/location'
+ 
+import MdPeople from 'react-icons/lib/md/people'
+import MdInfo from 'react-icons/lib/md/info'
+
+
 const styles = {
   headline: {
     fontSize: 24,
@@ -25,17 +36,18 @@ const styles = {
     });
   };
 
-  render() {
+  render() { 
+
     return (
       <Tabs
         value={this.state.value}
         onChange={this.handleChange} >
         
-        <Tab label="Profile" value="a">
+        <Tab icon={<IoPerson />} value="a">
            <div > <EmployeeProfileContainer />  </div>   
         </Tab>
 
-        <Tab label="History" value="b">
+        <Tab icon={<IoClock />} value="b">
           <div>
             <h2 style={styles.headline}>Controllable Tab B</h2>
             <p>
@@ -46,7 +58,7 @@ const styles = {
           </div>
         </Tab>
             
-            <Tab label="Grade" value="c">
+            <Tab  icon={<MdInfo />}  value="c">
           <div>
             <h2 style={styles.headline}>Controllable Tab C</h2>
             <p>
@@ -57,7 +69,7 @@ const styles = {
           </div>
         </Tab>
             
-            <Tab label="Family" value="d">
+            <Tab icon={<MdPeople />} value="d">
           <div>
             <h2 style={styles.headline}>Controllable Tab D</h2>
             <p>
@@ -68,7 +80,7 @@ const styles = {
           </div>
         </Tab>
             
-            <Tab label="Address" value="e">
+            <Tab icon={<HomeIcon />} value="e">
           <div>
             <h2 style={styles.headline}>Controllable Tab E</h2>
             <p>
@@ -79,7 +91,7 @@ const styles = {
           </div>
         </Tab>
             
-            <Tab label="Location" value="f">
+            <Tab icon={<GoLocation />} value="f">
           <div>
             <h2 style={styles.headline}>Controllable Tab F</h2>
             <p>

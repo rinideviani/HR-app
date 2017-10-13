@@ -8,6 +8,7 @@ import MobileTearSheet from './MobileTearSheet';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker'; 
 import Avatar from 'material-ui/Avatar'; 
+ 
   
 
 export default class EmployeeProfileDisplay extends React.Component{ 
@@ -16,31 +17,32 @@ export default class EmployeeProfileDisplay extends React.Component{
       //console.log("userprops",this.props); 
       const hiredDate = new Date(this.props.hiredDate); 
       const dob = new Date(this.props.dob); 
-    return( 
+ 
+ return( 
 
-<div style={{display: 'flex'}}>
+  <div style={{display: 'flex'}}>
    
-    <MobileTearSheet height={1000}>
-     <TextField  
+      <MobileTearSheet height={1000}>
+       <TextField  
         disabled={false}
-        floatingLabelText="First Name"
-        defaultValue={this.props.firstName}
-    /><br />
+         floatingLabelText="First Name"
+         defaultValue={this.props.firstName}
+       /><br />
 
-    <TextField
-       disabled={false}
+       <TextField
+        disabled={false}
         floatingLabelText="Last Name"
         defaultValue={this.props.lastName} 
-    /><br />
+     /><br />
 
-    <TextField
-       disabled={false}
+      <TextField
+         disabled={false}
         floatingLabelText="Gender"
         defaultValue={this.props.gender}
-    /><br />
+     /><br />
 
-   <DatePicker  
-    disabled={false}
+    <DatePicker  
+       disabled={false}
       floatingLabelText="DOB" 
       defaultDate={dob}
     /> 
@@ -65,50 +67,50 @@ export default class EmployeeProfileDisplay extends React.Component{
         
     </MobileTearSheet>
         
-  <div>  
-    <MobileTearSheet height={1000}>
+    <div>  
+     <MobileTearSheet height={1000}>
 
-     <TextField
-       disabled={false}
+       <TextField
+        disabled={false}
         floatingLabelText="Subdivision"
         defaultValue={this.props.subdivision}
-    /><br />
+     /><br />
 
-    <TextField
-       disabled={false}
+     <TextField
+         disabled={false}
         floatingLabelText="Status"
         defaultValue={this.props.status}
-    /><br />
+      /><br />
  
       <TextField
-       disabled={false}
+        disabled={false}
         floatingLabelText="Suspend Date"
         defaultValue={this.props.suspendDate}
-    /><br />
+     /><br />
 
-    <DatePicker  
-     disabled={false}
-    floatingLabelText="Hired Date" 
-     defaultDate={hiredDate}
-    /> 
+     <DatePicker  
+      disabled={false}
+      floatingLabelText="Hired Date" 
+      defaultDate={hiredDate}
+     /> 
      
       <TextField
        disabled={false}
         floatingLabelText="Grade"
         defaultValue={this.props.grade}
-    /><br />
+      /><br />
 
       <TextField
        disabled={false}
         floatingLabelText="Division"
         defaultValue={this.props.division}
-    /><br />
+      /><br />
 
       <TextField
        disabled={false}
         floatingLabelText="Email"
         defaultValue={this.props.email}
-    /><br />
+      /><br />
            
     
     </MobileTearSheet>

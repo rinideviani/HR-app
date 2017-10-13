@@ -5,8 +5,15 @@ import { Provider } from 'react-redux';
 
 import App from '../containers/App';
 import configureStore from '../store/configureStore';
-import store from '../store/store'
+import store from '../store/store';
+import { HashRouter  , Route } from 'react-router-dom';
+ import history from './history'
+ import routes from './routes'
+
+ import EmployeeDetailTab from '../components/EmployeeDetailTab';
  
+// ...
+
 //Needed for React Developer Tools
 window.React = React;
 
@@ -14,13 +21,20 @@ window.React = React;
 //Can go away when react 1.0 release
 //Check this repo:
 //https://github.com/zilverline/react-tap-event-plugin
-injectTapEventPlugin();
-
+injectTapEventPlugin(); 
 //const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}> 
-    <App />
-  </Provider>,
+      
+       <HashRouter>
+      	<Route exact path="/" component={App} 
+					 
+      	 />
+       
+      </HashRouter>
+      	 
+      
+    </Provider>,
   document.getElementById("root")
 );

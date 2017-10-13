@@ -1,7 +1,7 @@
 { 
 	"emp":[
 		{ 	"id":1,
-			"firstName":"George",
+			"firstName":"Georgia",
 			"lastName":"Bluth",
 			"gender":"M",
 			"dob":"1988-11-11",
@@ -16,9 +16,7 @@
 			"division":"CDC",
 			"email":"mail@gee.com", 
 			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
-		} , 
-		
-		
+		} ,   
 		{ 	"id":2,
 			"firstName":"Jake",
 			"lastName":"Weaver",
@@ -35,8 +33,7 @@
 			"division":"CDC",
 			"email":"mail@gee.com", 
 			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
-		}		
-		
-		
+		}	 
+		  
 	]
 }

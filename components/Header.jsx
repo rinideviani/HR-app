@@ -1,5 +1,4 @@
-import React, { PropTypes, Component } from 'react';
-import TodoTextInput from './TodoTextInput';
+import React, { PropTypes, Component } from 'react'; 
 
 import AppBar from 'material-ui/AppBar';
 

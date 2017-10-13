@@ -1,5 +1,4 @@
-import { combineReducers } from 'redux';
-import todos from './todos';
+import { combineReducers } from 'redux'; 
 import user from './userReducer';
 
 
