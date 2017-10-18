@@ -22,14 +22,14 @@ export default class EmployeeProfileContainer extends React.Component{
  } 
 
   render(){
-  
-   const { users } = this.state;
-   //console.log('statess...', this.state.users); 
+     
+   const { users } = this.state;  
+  // console.log('statess...',users); 
 
 if(Object.getOwnPropertyNames(this.state.users).length === 0){
       return (<div></div>) 
 } 
-    const userNodes = this.state.users.map(function(user,index){
+    const userNodes = users.map(function(user,index){
       return (
         <EmployeeProfileDisplay 
           key={user.id}

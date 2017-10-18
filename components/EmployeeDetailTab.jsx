@@ -36,15 +36,17 @@ const styles = {
     });
   };
 
-  render() { 
+  
 
+  render() { 
+     
     return (
-      <Tabs
+      <Tabs  
         value={this.state.value}
         onChange={this.handleChange} >
         
         <Tab icon={<IoPerson />} value="a">
-           <div > <EmployeeProfileContainer />  </div>   
+           <div > <EmployeeProfileContainer callBackFromMainApp={this.detailTabCallBack}  />  </div>   
         </Tab>
 
         <Tab icon={<IoClock />} value="b">

@@ -22,9 +22,16 @@ export default class PageSearch extends Component{
         this.state={ inputText: "" };   
     }   
 
+     handleClick(keyData) {   
+     this.setState({keyData:keyData}); 
+     this.props.callBackFromSearchPage(keyData);
+     console.log('callBackFromSearchPage', keyData)
+ 
+    }
+
     render(){  
       let that=this;
-      //console.log('props Search',that.props.items);
+      console.log('props Search',this.props.items);
         let languages = this.props.items, 
         inputText = this.state.inputText.trim().toLowerCase();  
         if(inputText.length > 0){
@@ -54,9 +61,15 @@ export default class PageSearch extends Component{
                 languages.map(function(emp){ 
 
                   return(
-                     <EmployeeNameList key={emp.id} 
-                     emp={that.props.items}   
-                      />   
+                        <SelectableList defaultValue={0}
+                        className="list-group-item" key={emp.id}>           
+                         <ListItem 
+                          value={emp.id}
+                          onClick={that.handleClick.bind(that,emp.id)}
+                          primaryText={emp.firstName+" "+emp.lastName}
+                          leftAvatar={<Avatar src={emp.avatar} />} 
+                          />     
+                      </SelectableList>    
                   ) 
                 }) 
               } 

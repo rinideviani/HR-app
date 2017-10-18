@@ -9,46 +9,82 @@ import * as TodoActions from '../actions/todos';
 // './src/material_ui_raw_theme_file.jsx' as a template.
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import theme from '../src/material_ui_raw_theme_file'
+import * as UserActions from '../actions/UserActions'
+import { EmployeeDetailTab }  from '../components/EmployeeDetailTab'; 
+import { EmployeeAddForm } from '../components/EmployeeAddForm'
+
+import {fetchUsers} from '../actions/UserActions';
 
 class App extends Component {
-  render() {
-    const { todos, actions } = this.props;
+
+
+   constructor(){
+    super(); 
+    this.state={ users: [] }; 
+  //  this.mainAppCallBack=this.mainAppCallBack.bind(this)
+      } 
+  getUsersDetail(){
+    fetchUsers().then((users) => {
+      this.setState({ users }); 
+    });
+  }
+
+  componentDidMount(){
+      this.getUsersDetail();
+  }  
+ 
+   mainAppCallBack = (keyData) => {
+          console.log('callBack in App', keyData) ;    
+    }   
+
+
+  
+  render() {  
+    const {empData, actions } = this.props ;   
     return (
-      <div>
-        <MuiThemeProvider muiTheme={theme}>
-          <div>
-                
-               <Header addTodo={actions.addTodo}/> 
-               
-             <MainSection todos={todos} actions={actions}/>
-          </div>
-        </MuiThemeProvider>
+      <div className="app"> 
+          <MuiThemeProvider muiTheme={theme}>
+
+              {(this.props.location.pathname === "/")?
+
+
+              <div id="mainSection" style={{display: 'flex'}}>  
+                 <MainSection items={this.state.users}
+                  callBackFromMainSection={this.mainAppCallBack}/>  
+                <EmployeeDetailTab />  
+              </div> :
+
+               <EmployeeAddForm/>
+
+            }
+              
+        
+
+        </MuiThemeProvider>  
+ 
+
       </div>
     );
   }
 }
 
-App.propTypes = {
-   
-  actions: PropTypes.object.isRequired 
-  
+App.propTypes = { 
+  actions: PropTypes.object.isRequired  
 };
 
 
 //Map the state to props
 function mapStateToProps(state) {
   return {
-    todos: state.todos
+    empData: state.empData
   };
 }
-
+  
 
 //Map the action to props
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(TodoActions, dispatch) 
-     
-
+    actions: bindActionCreators(UserActions, dispatch)  
   };
 }
 

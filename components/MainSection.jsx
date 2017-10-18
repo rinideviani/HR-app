@@ -6,7 +6,7 @@ import React, { Component, PropTypes } from 'react';
 import {List, makeSelectable} from 'material-ui/List';
 import MobileTearSheet from './MobileTearSheet'; 
  
-import { EmployeeDetailTab }  from './EmployeeDetailTab'; 
+
 import PageSearch  from './PageSearch';  
 import {fetchUsers} from '../actions/UserActions';
 
@@ -24,40 +24,23 @@ const menuProps = {
 
 export default class MainSection extends React.Component{
    
-  constructor(){
-    super(); 
-    this.state={ users: [] };
-  } 
-  getUsersDetail(){
-    fetchUsers().then((users) => {
-      this.setState({ users });
-    });
-  }
-
-  componentDidMount(){
-      this.getUsersDetail();
-  } 
-
-   
+    mainSectionCallBack = (keyData) => {
+        
+          this.props.callBackFromMainSection(keyData); 
+           console.log('callback in mainSection', keyData)
+    } 
+ 
 
   render(){
- 
-     console.log('indexnya',this.state.users);
-
+  
     return(
-        <div id="mainSection"> 
-          <div style={{display: 'flex'}}> 
+       <div id="searchSection"> 
 
-              <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
-                
-                 <PageSearch  items={this.state.users}/>   
- 
-              </MobileTearSheet>   
-          
-            <div > <EmployeeDetailTab /> </div> 
+          <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
+            <PageSearch items={this.props.items} callBackFromSearchPage={this.mainSectionCallBack} />
+          </MobileTearSheet>  
 
-          </div>  
-        </div> 
+       </div> 
     ) 
   }
 
