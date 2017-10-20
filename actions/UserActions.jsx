@@ -3,8 +3,9 @@ import React from 'react';
 
 const BASE_URL='http://localhost:9000';
 
-export{fetchUsers};
+ 
 
+export{fetchUsers};
 function fetchUsers(){
 
 	const url=`${BASE_URL}/emp`;

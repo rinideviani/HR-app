@@ -25,13 +25,13 @@ export default class PageSearch extends Component{
      handleClick(keyData) {   
      this.setState({keyData:keyData}); 
      this.props.callBackFromSearchPage(keyData);
-     console.log('callBackFromSearchPage', keyData)
+    // console.log('callBackFromSearchPage', keyData)
  
     }
 
     render(){  
       let that=this;
-      console.log('props Search',this.props.items);
+    //  console.log('props Search',this.props.items);
         let languages = this.props.items, 
         inputText = this.state.inputText.trim().toLowerCase();  
         if(inputText.length > 0){

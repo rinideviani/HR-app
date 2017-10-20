@@ -34,35 +34,34 @@ class App extends Component {
   }  
  
    mainAppCallBack = (keyData) => {
-          console.log('callBack in App', keyData) ;    
+          console.log('callBack in App', keyData) ; 
+          this.setState({keyData:keyData});   
     }   
-
 
   
   render() {  
-    const {empData, actions } = this.props ;   
+    const {empData, actions } = this.props ;
+       
+    const i=(this.state.keyData)-1;
+    console.log('user',this.state.users[i])
+    //console.log('empdata',this.state.keyData)
     return (
       <div className="app"> 
           <MuiThemeProvider muiTheme={theme}>
 
-              {(this.props.location.pathname === "/")?
+              {(this.props.location.pathname === "/")? 
 
-
-              <div id="mainSection" style={{display: 'flex'}}>  
+              <div id="mainSection" style={{display: 'flex'}}> 
+                    
                  <MainSection items={this.state.users}
-                  callBackFromMainSection={this.mainAppCallBack}/>  
-                <EmployeeDetailTab />  
-              </div> :
+                  callBackFromMainSection={this.mainAppCallBack}/> 
 
-               <EmployeeAddForm/>
+                <EmployeeDetailTab tabKey={this.state.users[i]}  />  
+              </div> : 
 
-            }
-              
-        
-
-        </MuiThemeProvider>  
- 
-
+               <EmployeeAddForm/> 
+            } 
+          </MuiThemeProvider>   
       </div>
     );
   }
@@ -74,9 +73,10 @@ App.propTypes = {
 
 
 //Map the state to props
-function mapStateToProps(state) {
+function mapStateToProps(state,ownProps) {
+   
   return {
-    empData: state.empData
+    empData: state.empData 
   };
 }
   

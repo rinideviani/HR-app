@@ -27,7 +27,7 @@ export default class MainSection extends React.Component{
     mainSectionCallBack = (keyData) => {
         
           this.props.callBackFromMainSection(keyData); 
-           console.log('callback in mainSection', keyData)
+          // console.log('callback in mainSection', keyData)
     } 
  
 

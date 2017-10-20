@@ -36,17 +36,16 @@ const styles = {
     });
   };
 
-  
-
+   
   render() { 
-     
+     //console.log('callBack in detail tab', this.props.tabKey) ; 
     return (
       <Tabs  
         value={this.state.value}
         onChange={this.handleChange} >
         
         <Tab icon={<IoPerson />} value="a">
-           <div > <EmployeeProfileContainer callBackFromMainApp={this.detailTabCallBack}  />  </div>   
+           <div > <EmployeeProfileContainer empId={this.props.tabKey}   />  </div>   
         </Tab>
 
         <Tab icon={<IoClock />} value="b">

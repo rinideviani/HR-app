@@ -6,62 +6,38 @@ import {fetchUsers} from '../actions/UserActions';
 
 
 export default class EmployeeProfileContainer extends React.Component{
-   
-  constructor(){
-    super(); 
-    this.state={ users: [] };
-  } 
-  getUsersDetail(){
-    fetchUsers().then((users) => {
-      this.setState({ users });
-    });
-  }
-
- componentDidMount(){
-  this.getUsersDetail();
- } 
-
+  
   render(){
-     
-   const { users } = this.state;  
-  // console.log('statess...',users); 
+  // console.log('empId',this.props.empId) 
+   const  employeeId  = this.props.empId;
+  // console.log('statess...',employeeId); 
 
-if(Object.getOwnPropertyNames(this.state.users).length === 0){
+    if ( !employeeId )
+    {
       return (<div></div>) 
-} 
-    const userNodes = users.map(function(user,index){
+    } 
+     
       return (
         <EmployeeProfileDisplay 
-          key={user.id}
-          firstName={user.firstName}
-          lastName={user.lastName}
-          gender={user.gender} 
-          dob={user.dob}
-          nationality={user.nationality}
-          maritalStatus={user.maritalStatus}
-          phone={user.phone}
-          subdivision={user.subdivision}
-          status={user.status}
-          suspendDate={user.suspendDate}
-          hiredDate={user.hiredDate}
-          grade={user.grade}
-          division={user.division}
-          email={user.email}
-          avatar={user.avatar}> 
+          key={employeeId.id}
+          id={employeeId.id}
+          firstName={employeeId.firstName}
+          lastName={employeeId.lastName}
+          gender={employeeId.gender} 
+          dob={employeeId.dob}
+          nationality={employeeId.nationality}
+          maritalStatus={employeeId.maritalStatus}
+          phone={employeeId.phone}
+          subdivision={employeeId.subdivision}
+          status={employeeId.status}
+          suspendDate={employeeId.suspendDate}
+          hiredDate={employeeId.hiredDate}
+          grade={employeeId.grade}
+          division={employeeId.division}
+          email={employeeId.email}
+          avatar={employeeId.avatar}> 
         </EmployeeProfileDisplay> 
-      )
-    }) 
-
-
-return (
-      <div>
-          
-        {userNodes}
-       
-      </div>
-    )
- 
-
+      ) 
   }
 }
  

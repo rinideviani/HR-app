@@ -33,7 +33,24 @@
 			"division":"CDC",
 			"email":"mail@gee.com", 
 			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
-		}	 
+		}	 ,
+		{ 	"id":3,
+			"firstName":"Joana",
+			"lastName":"Wiils",
+			"gender":"M",
+			"dob":"1988-11-11",
+			"nationality":"India",
+			"maritalStatus":"Married",
+			"phone":"332 321",
+			"subdivision":"CDC",
+			"status":"Full Time",
+			"suspendDate":"-",
+			"hiredDate":"2017-10-13",
+			"grade":"PG",
+			"division":"CDC",
+			"email":"mail@gee.com", 
+			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+		}	
 		  
 	]
 }
