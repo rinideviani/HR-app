@@ -67,6 +67,14 @@ export default class PageSearch extends Component{
                           value={emp.id}
                           onClick={that.handleClick.bind(that,emp.id)}
                           primaryText={emp.firstName+" "+emp.lastName}
+                          secondaryText={
+                            <p>
+                               {emp.grade} , {emp.division} <br />
+                               {emp.location}  ,  {emp.phone}
+                            </p>
+                              
+                          }
+                          secondaryTextLines={2}
                           leftAvatar={<Avatar src={emp.avatar} />} 
                           />     
                       </SelectableList>    

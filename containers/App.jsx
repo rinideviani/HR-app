@@ -56,7 +56,9 @@ class App extends Component {
                  <MainSection items={this.state.users}
                   callBackFromMainSection={this.mainAppCallBack}/> 
 
+                 <div>
                 <EmployeeDetailTab tabKey={this.state.users[i]}  />  
+              </div>
               </div> : 
 
                <EmployeeAddForm/> 
