@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {ListItem, makeSelectable, List} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar'; 
-import {fetchUsers} from '../actions/UserActions';
-
-import EmployeeNameList from './EmployeeNameList'
+import {fetchUsers} from '../actions/UserActions'; 
 
 let SelectableList = makeSelectable(List);
 
@@ -31,7 +29,7 @@ export default class PageSearch extends Component{
 
     render(){  
       let that=this;
-    //  console.log('props Search',this.props.items);
+       //console.log('props Search',this.props.items);
         let languages = this.props.items, 
         inputText = this.state.inputText.trim().toLowerCase();  
         if(inputText.length > 0){

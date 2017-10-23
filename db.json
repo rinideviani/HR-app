@@ -12,11 +12,17 @@
 			"status":"Full Time",
 			"suspendDate":"-",
 			"hiredDate":"2017-10-13",
-			"grade":"SE-PG",
+			"grade":"SE-AP",
 			"division":"SWD-Green",
 			"email":"mail@gee.com", 
 			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg",
-			"location":"Jakarta"
+			"location":"Jakarta",
+			"gradeHistory": {
+				"ds":"DS9",
+				"currentGrade":"SE-AP",
+				"startDate":"2016-1-23",
+				"endDate":"2017-9-13"
+			} 
 			
 		} ,   
 		{ 	"id":2,
@@ -35,7 +41,14 @@
 			"division":"SWD-Red",
 			"email":"mail@gee.com", 
 			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg",
-			"location":"Jakarta"
+			"location":"Jakarta",
+			
+			"gradeHistory": {
+				"ds":"DS5",
+				"currentGrade":"SE-PG",
+				"startDate":"2017-1-13",
+				"endDate":"2017-9-13"
+			} 
 		}	  	
 		
 		  

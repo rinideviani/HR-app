@@ -20,9 +20,9 @@ class App extends Component {
 
    constructor(){
     super(); 
-    this.state={ users: [] }; 
-  //  this.mainAppCallBack=this.mainAppCallBack.bind(this)
-      } 
+    this.state={ users: [] };  
+   } 
+   
   getUsersDetail(){
     fetchUsers().then((users) => {
       this.setState({ users }); 
@@ -34,7 +34,7 @@ class App extends Component {
   }  
  
    mainAppCallBack = (keyData) => {
-          console.log('callBack in App', keyData) ; 
+        // console.log('callBack in App', keyData) ; 
           this.setState({keyData:keyData});   
     }   
 
@@ -43,7 +43,7 @@ class App extends Component {
     const {empData, actions } = this.props ;
        
     const i=(this.state.keyData)-1;
-    console.log('user',this.state.users[i])
+    //console.log('user',this.state.users[i])
     //console.log('empdata',this.state.keyData)
     return (
       <div className="app"> 

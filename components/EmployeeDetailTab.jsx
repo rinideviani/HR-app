@@ -1,6 +1,7 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs'; 
 import EmployeeProfileContainer from './EmployeeProfileContainer'; 
+import EmployeeGradeContainer from './EmployeeGradeContainer'
 
 //icons
 import HomeIcon from 'react-icons/lib/fa/home'
@@ -45,7 +46,9 @@ const styles = {
         onChange={this.handleChange} >
         
         <Tab icon={<IoPerson />} value="a">
-           <div > <EmployeeProfileContainer empId={this.props.tabKey}   />  </div>   
+           <div > 
+            <EmployeeProfileContainer empId={this.props.tabKey} />  
+           </div>   
         </Tab>
 
         <Tab icon={<IoClock />} value="b">
@@ -61,12 +64,8 @@ const styles = {
             
             <Tab  icon={<MdInfo />}  value="c">
           <div>
-            <h2 style={styles.headline}>Controllable Tab C</h2>
-            <p>
-              This is another example of a controllable tab. Remember, if you
-              use controllable Tabs, you need to give all of your tabs values or else
-              you wont be able to select them.
-            </p>
+              { <EmployeeGradeContainer empId={this.props.tabKey}   />
+              }
           </div>
         </Tab>
             

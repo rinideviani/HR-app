@@ -1,20 +1,15 @@
 import React from 'react'; 
-import EmployeeProfileDisplay from './EmployeeProfileDisplay';  
-import {fetchUsers} from '../actions/UserActions';  
-
-
-
+import EmployeeProfileDisplay from './EmployeeProfileDisplay';   
 
 export default class EmployeeProfileContainer extends React.Component{
   
   render(){
-  // console.log('empId',this.props.empId) 
+   // console.log('empId',this.props.empId) 
    const  employeeId  = this.props.empId;
-  // console.log('statess...',employeeId); 
-
+   
     if ( !employeeId )
     {
-      return (<div></div>) 
+      return (<div>Please Select...</div>) 
     } 
      
       return (

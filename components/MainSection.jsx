@@ -24,10 +24,8 @@ const menuProps = {
 
 export default class MainSection extends React.Component{
    
-    mainSectionCallBack = (keyData) => {
-        
-          this.props.callBackFromMainSection(keyData); 
-          // console.log('callback in mainSection', keyData)
+    mainSectionCallBack = (keyData) => { 
+          this.props.callBackFromMainSection(keyData);  
     } 
  
 
@@ -36,7 +34,7 @@ export default class MainSection extends React.Component{
     return(
        <div id="searchSection"> 
 
-          <MobileTearSheet style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
+          <MobileTearSheet height={1000} style={{border: '1px solid #d9d9d9', borderBottom: 'none'}} >
             <PageSearch items={this.props.items} callBackFromSearchPage={this.mainSectionCallBack} />
           </MobileTearSheet>  
 
