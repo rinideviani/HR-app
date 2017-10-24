@@ -17,14 +17,26 @@
 			"email":"mail@gee.com", 
 			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg",
 			"location":"Jakarta",
-			"gradeHistory": {
-				"ds":"DS9",
-				"currentGrade":"SE-AP",
-				"startDate":"2016-1-23",
-				"endDate":"2017-9-13"
-			} 
+			"gradeHistory":[
+				{	"no":"0",
+					"ds":"DS6",
+					"currentGrade":"SE-PG",
+					"startDate":"2015-1-23",
+					"endDate":"2016-9-23"
+				},
+				{
+					"no":"1",
+					"ds":"DS9",
+					"currentGrade":"SE-AP",
+					"startDate":"2016-9-23",
+					"endDate":"2017-9-23"
+				}
+
+
+			]
 			
-		} ,   
+		}  ,
+		
 		{ 	"id":2,
 			"firstName":"Jake",
 			"lastName":"Weaver",
@@ -42,14 +54,30 @@
 			"email":"mail@gee.com", 
 			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg",
 			"location":"Jakarta",
+			"gradeHistory":[
+				{	"no":"0",
+					"ds":"DS9",
+					"currentGrade":"SE-AP",
+					"startDate":"2015-1-23",
+					"endDate":"2016-9-23"
+				},
+				{
+					"no":"1",
+					"ds":"DS12",
+					"currentGrade":"SE-AN",
+					"startDate":"2016-9-23",
+					"endDate":"2017-9-23"
+				}
+
+
+			]
 			
-			"gradeHistory": {
-				"ds":"DS5",
-				"currentGrade":"SE-PG",
-				"startDate":"2017-1-13",
-				"endDate":"2017-9-13"
-			} 
-		}	  	
+		}
+		
+		
+		
+		
+		
 		
 		  
 	]

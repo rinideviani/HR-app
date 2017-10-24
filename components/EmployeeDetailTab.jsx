@@ -2,7 +2,7 @@ import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs'; 
 import EmployeeProfileContainer from './EmployeeProfileContainer'; 
 import EmployeeGradeContainer from './EmployeeGradeContainer'
-
+import EmployeeGradeDisplay from './EmployeeGradeDisplay'
 //icons
 import HomeIcon from 'react-icons/lib/fa/home'
 import IoPerson from 'react-icons/lib/io/person'
@@ -64,8 +64,9 @@ const styles = {
             
             <Tab  icon={<MdInfo />}  value="c">
           <div>
-              { <EmployeeGradeContainer empId={this.props.tabKey}   />
-              }
+               <EmployeeGradeDisplay/>
+               <EmployeeGradeContainer employeeById={this.props.tabKey}   />
+              
           </div>
         </Tab>
             

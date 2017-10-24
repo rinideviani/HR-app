@@ -18,11 +18,11 @@ export default class EmployeeProfileDisplay extends React.Component{
       const hiredDate = new Date(this.props.hiredDate); 
       const dob = new Date(this.props.dob); 
 
-        const mainBody ={ 
-          display: 'flex',
-       width:"1000px" ,
-       margin : "20px"
-    };
+      const mainBody ={ 
+        display: 'flex',
+        width:"1000px" ,
+        margin : "20px"
+      };
 
  
      return( 

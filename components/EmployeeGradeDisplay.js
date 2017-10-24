@@ -8,13 +8,15 @@ import {
   TableRowColumn
 } from 'material-ui';
 
-
- 
-
+import FontIcon from 'material-ui/FontIcon';
+import {blue500, red500, greenA200} from 'material-ui/styles/colors';
+import IconButton from 'material-ui/IconButton'; 
 import DatePicker from 'material-ui/DatePicker'; 
+import EmployeeGradeDisplayContent from './EmployeeGradeDisplayContent'
+
+
 
 export default class EmployeeGradeDisplay extends React.Component{
-
 
 
  state = {
@@ -36,82 +38,45 @@ export default class EmployeeGradeDisplay extends React.Component{
     const tableStyle ={
       background: "none",
        width:"1000px" ,
-       margin:"10px"
+       margin:"10px",
+       height:"5px"
     };
       const tableBodyRowStyle={
         align:'right',  
         margin:"10px"
       }
+
  
+const tableHeaderStyle2={
+  width:"50px", 
+}
+const tableHeaderStyle3={
+  width:"250px", 
+}
+const tableHeaderStyle4={
+  width:"245px", 
+}
+const tableHeaderStyle5={
+  width:"70px", 
+}
+       
+
       const startDate = new Date(this.props.startDate); 
       const endDate = new Date(this.props.endDate);  
       
     return (
-
-      <div style={{display: 'flex'}}  >
  
-        <Table  style={tableStyle} 
-          height={this.state.height}
-          fixedHeader={this.state.fixedHeader}
-          fixedFooter={this.state.fixedFooter}
-          selectable={this.state.selectable}
-          multiSelectable={this.state.multiSelectable}
-
-        >
           <TableHeader  style={tableBodyRowStyle} displaySelectAll={this.state.adjustCheckboxes} >
-
-
-           <TableRow >
-                <TableRowColumn>DS</TableRowColumn>
-                <TableRowColumn>Grade</TableRowColumn>
-                <TableRowColumn>Start Date</TableRowColumn>
-                <TableRowColumn>End Date</TableRowColumn>
-                <TableRowColumn>Action</TableRowColumn>
+ 
+           <TableRow style={tableStyle} >
+                 
+                <TableHeaderColumn style={tableHeaderStyle2} > Grade </TableHeaderColumn >
+                <TableHeaderColumn style={tableHeaderStyle3} > Start Date </TableHeaderColumn >
+                <TableHeaderColumn style={tableHeaderStyle4} > End Date </TableHeaderColumn >
+                <TableHeaderColumn style={tableHeaderStyle5} > Action </TableHeaderColumn >
               </TableRow>
-
-
-          </TableHeader>
-
-
-          <TableBody
-            displayRowCheckbox={this.state.showCheckboxes}
-            deselectOnClickaway={this.state.deselectOnClickaway}
-            showRowHover={this.state.showRowHover}
-            stripedRows={this.state.stripedRows}
-          >
-             
-              <TableRow  
-                        
-                 >
-                <TableRowColumn>{this.props.ds}</TableRowColumn>
-                <TableRowColumn>{this.props.currentGrade}</TableRowColumn>
-                <TableRowColumn >   
-                 <  DatePicker name="startDate"
-                    disabled={false} 
-                    value={startDate}
-                  />  
-
-                </TableRowColumn>
-
-                <TableRowColumn  > 
-                  <  DatePicker 
-                      name="endDate"
-                    disabled={false} 
-                    value={endDate}
-                  />
-
-                </TableRowColumn>
-
-                <TableRowColumn>  </TableRowColumn>
-              </TableRow>
-               
-          </TableBody>
-
-
-
-        </Table>
-
-      </div>
+ 
+          </TableHeader>  
 
 
      )
