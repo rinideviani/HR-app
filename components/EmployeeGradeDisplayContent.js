@@ -8,9 +8,7 @@ import {
   TableRowColumn
 } from 'material-ui';
 
-import FontIcon from 'material-ui/FontIcon';
-import {blue500, red500, greenA200} from 'material-ui/styles/colors';
-import IconButton from 'material-ui/IconButton'; 
+ 
 import DatePicker from 'material-ui/DatePicker'; 
 
 
@@ -29,12 +27,15 @@ export default class EmployeeGradeDisplayContent extends React.Component{
     deselectOnClickaway: true,
     showCheckboxes: false,
     adjustCheckboxes: false,
-    height: '300px' 
+    height: '300px' ,
+    coloumnNumber: 5
   };
 
 
 	render(){
-    const tableStyle ={
+    
+    const tableStyle =
+    {
       background: "none",
        width:"1000px" ,
        margin:"5px",
@@ -47,11 +48,12 @@ export default class EmployeeGradeDisplayContent extends React.Component{
     return (
  
   
-          <TableBody  style={tableStyle} 
+          <TableBody   
             displayRowCheckbox={this.state.showCheckboxes}
             deselectOnClickaway={this.state.deselectOnClickaway}
             showRowHover={this.state.showRowHover}
             stripedRows={this.state.stripedRows}
+            coloumnNumber={this.state.coloumnNumber}
           >
              
               <TableRow   >

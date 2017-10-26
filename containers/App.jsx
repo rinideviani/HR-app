@@ -18,10 +18,10 @@ import {fetchUsers} from '../actions/UserActions';
 class App extends Component {
 
 
-   constructor(){
+  constructor(){
     super(); 
     this.state={ users: [] };  
-   } 
+  } 
    
   getUsersDetail(){
     fetchUsers().then((users) => {
@@ -33,10 +33,10 @@ class App extends Component {
       this.getUsersDetail();
   }  
  
-   mainAppCallBack = (keyData) => {
+  mainAppCallBack = (keyData) => {
         // console.log('callBack in App', keyData) ; 
           this.setState({keyData:keyData});   
-    }   
+  }   
 
   
   render() {  

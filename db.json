@@ -30,12 +30,29 @@
 					"currentGrade":"SE-AP",
 					"startDate":"2016-9-23",
 					"endDate":"2017-9-23"
-				}
-
-
+				} 
+			],
+				 
+			"familyMember":[
+				{
+				"no":"0",
+				"name":"Marlie",
+				"gender":"F",
+				"dob":"1999-9-23",
+				"type":"Wife",
+				"isActive":true 
+				},
+				{
+				"no":"1",
+				"name":"Kareema",
+				"gender":"F",
+				"dob":"1999-9-23",
+				"type":"Sister",
+				"isActive":true
+				} 
 			]
 			
-		}  ,
+		},
 		
 		{ 	"id":2,
 			"firstName":"Jake",
@@ -67,18 +84,27 @@
 					"currentGrade":"SE-AN",
 					"startDate":"2016-9-23",
 					"endDate":"2017-9-23"
-				}
-
-
-			]
+				},
+				{
+					"no":"2",
+					"ds":"DS12",
+					"currentGrade":"SE-MJ",
+					"startDate":"2016-9-23",
+					"endDate":"2017-9-23"
+				} 
+			] ,
 			
-		}
-		
-		
-		
-		
-		
-		
-		  
+			 
+			"familyMember":[
+				{
+				"no":"0",
+				"name":"Meilanie",
+				"gender":"F",
+				"dob":"1999-9-23",
+				"type":"Wife",
+				"isActive":true
+				} 
+			]
+		} 	   
 	]
 }

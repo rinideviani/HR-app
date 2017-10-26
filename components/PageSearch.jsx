@@ -3,6 +3,8 @@ import {ListItem, makeSelectable, List} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar'; 
 import {fetchUsers} from '../actions/UserActions'; 
 
+import PropTypes from 'prop-types';
+
 let SelectableList = makeSelectable(List);
 
 const jumbotronStyle = {
@@ -27,9 +29,29 @@ export default class PageSearch extends Component{
  
     }
 
+    
+    //for changes the color when clicked
+    
+
+    componentWillMount() {
+      this.setState({
+        selectedIndex: this.state.keyData 
+      });
+    }
+
+    handleRequestChange = (event, index) => {
+      this.setState({
+        selectedIndex: index 
+      });
+    };
+
+ //for changes the color when clicked ends here
+ 
+
+
     render(){  
       let that=this;
-       //console.log('props Search',this.props.items);
+        //console.log('props Search',this.state.keyData);
         let languages = this.props.items, 
         inputText = this.state.inputText.trim().toLowerCase();  
         if(inputText.length > 0){
@@ -59,11 +81,13 @@ export default class PageSearch extends Component{
                 languages.map(function(emp){ 
 
                   return(
-                        <SelectableList defaultValue={0}
+                        <SelectableList defaultValue={1}
                         className="list-group-item" key={emp.id}>           
                          <ListItem 
                           value={emp.id}
-                          onClick={that.handleClick.bind(that,emp.id)}
+                          onClick={that.handleClick.bind(that,emp.id)} 
+                          
+
                           primaryText={emp.firstName+" "+emp.lastName}
                           secondaryText={
                             <p>

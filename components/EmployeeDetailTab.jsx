@@ -3,6 +3,11 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import EmployeeProfileContainer from './EmployeeProfileContainer'; 
 import EmployeeGradeContainer from './EmployeeGradeContainer'
 import EmployeeGradeDisplay from './EmployeeGradeDisplay'
+
+import EmployeeFamilyContainer from './familyMember/EmployeeFamilyContainer'
+import EmployeeFamilyHeader from './familyMember/EmployeeFamilyHeader'
+
+
 //icons
 import HomeIcon from 'react-icons/lib/fa/home'
 import IoPerson from 'react-icons/lib/io/person'
@@ -63,21 +68,18 @@ const styles = {
         </Tab>
             
             <Tab  icon={<MdInfo />}  value="c">
-          <div>
-               <EmployeeGradeDisplay/>
+           
+               <EmployeeGradeDisplay employeeById={this.props.tabKey} />
                <EmployeeGradeContainer employeeById={this.props.tabKey}   />
-              
-          </div>
+             
+          
         </Tab>
             
             <Tab icon={<MdPeople />} value="d">
           <div>
-            <h2 style={styles.headline}>Controllable Tab D</h2>
-            <p>
-              This is another example of a controllable tab. Remember, if you
-              use controllable Tabs, you need to give all of your tabs values or else
-              you wont be able to select them.
-            </p>
+                <EmployeeFamilyHeader employeeById={this.props.tabKey} />
+               <EmployeeFamilyContainer employeeById={this.props.tabKey}   />
+             
           </div>
         </Tab>
             

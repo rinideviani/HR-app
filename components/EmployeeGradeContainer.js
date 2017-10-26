@@ -4,9 +4,7 @@ import EmployeeGradeDisplayContent from './EmployeeGradeDisplayContent'
 
 
 export default class EmployeeGradeContainer extends React.Component{
-
-	 
-
+ 
 	render(){  
  
 		//console.log('grade iistory',this.props.employeeById) 

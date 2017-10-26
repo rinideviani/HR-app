@@ -11,11 +11,11 @@ import {
 import FontIcon from 'material-ui/FontIcon';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';  
-import EmployeeGradeDisplayContent from './EmployeeGradeDisplayContent'
+import EmployeeFamilyDisplay from './EmployeeFamilyDisplay'
 
 
 
-export default class EmployeeGradeDisplay extends React.Component{
+export default class EmployeeFamilyHeader extends React.Component{
 
 
  state = {
@@ -47,10 +47,10 @@ const tableHeaderStyle2={
   width:"50px" 
 }
 const tableHeaderStyle3={
-  width:"250px" 
+  width:"230px" 
 }
 const tableHeaderStyle4={
-  width:"245px" 
+  width:"35px" 
 }
 const tableHeaderStyle5={
   width:"70px" 
@@ -67,12 +67,12 @@ const tableHeaderStyle5={
  
          
            <TableRow style={tableStyle} >
-                <TableHeaderColumn style={tableHeaderStyle1} > DS </TableHeaderColumn >
+                <TableHeaderColumn style={tableHeaderStyle1} > Name </TableHeaderColumn >
                  
-                <TableHeaderColumn style={tableHeaderStyle2} > Grade </TableHeaderColumn >
-                <TableHeaderColumn style={tableHeaderStyle3} > Start Date </TableHeaderColumn >
-                <TableHeaderColumn style={tableHeaderStyle4} > End Date </TableHeaderColumn >
-                <TableHeaderColumn style={tableHeaderStyle5} > Action </TableHeaderColumn >
+                <TableHeaderColumn style={tableHeaderStyle2} > Gender </TableHeaderColumn >
+                <TableHeaderColumn style={tableHeaderStyle3} > DOB </TableHeaderColumn >
+                <TableHeaderColumn style={tableHeaderStyle4} > Type </TableHeaderColumn >
+                <TableHeaderColumn style={tableHeaderStyle5} > Active </TableHeaderColumn >
               </TableRow>
  
        
