@@ -10,8 +10,7 @@ import configureStore from '../store/store';
 //import store from '../store/store'; 
  
 
-import { Router, Route, hashHistory } from 'react-router'
-import {fetchUsers} from '../actions/UserActions';
+import { Router, Route, hashHistory } from 'react-router' 
 import {loadEmployees} from '../actions/employeeActions'
  
 // ...
