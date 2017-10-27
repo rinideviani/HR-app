@@ -1,11 +1,9 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs'; 
 import EmployeeProfileContainer from './EmployeeProfileContainer'; 
-import EmployeeGradeContainer from './EmployeeGradeContainer'
-import EmployeeGradeDisplay from './EmployeeGradeDisplay'
+ import EmployeeGradeDisplay from './EmployeeGradeDisplay'
 
-import EmployeeFamilyContainer from './familyMember/EmployeeFamilyContainer'
-import EmployeeFamilyHeader from './familyMember/EmployeeFamilyHeader'
+ import EmployeeFamilyDisplay from './EmployeeFamilyDisplay'
 
 
 //icons
@@ -50,60 +48,43 @@ const styles = {
         value={this.state.value}
         onChange={this.handleChange} >
         
-        <Tab icon={<IoPerson />} value="a">
-           <div > 
-            <EmployeeProfileContainer empId={this.props.tabKey} />  
-           </div>   
-        </Tab>
+            <Tab icon={<IoPerson />} value="a">
+               <div > 
+                <EmployeeProfileContainer empId={this.props.tabKey} />  
+               </div>   
+            </Tab>
 
-        <Tab icon={<IoClock />} value="b">
-          <div>
-            <h2 style={styles.headline}>Controllable Tab B</h2>
-            <p>
-              This is another example of a controllable tab. Remember, if you
-              use controllable Tabs, you need to give all of your tabs values or else
-              you wont be able to select them.
-            </p>
-          </div>
-        </Tab>
+            <Tab icon={<IoClock />} value="b">
+              <div>
+                <h2 style={styles.headline}>Employment History</h2> 
+              </div>
+            </Tab>
             
-            <Tab  icon={<MdInfo />}  value="c">
-           
-               <EmployeeGradeDisplay employeeById={this.props.tabKey} />
-               <EmployeeGradeContainer employeeById={this.props.tabKey}   />
-             
-          
-        </Tab>
+            <Tab  icon={<MdInfo />}  value="c"> 
+               <EmployeeGradeDisplay employeeById={this.props.tabKey} /> 
+            </Tab>
             
-            <Tab icon={<MdPeople />} value="d">
-          <div>
-                <EmployeeFamilyHeader employeeById={this.props.tabKey} />
-               <EmployeeFamilyContainer employeeById={this.props.tabKey}   />
-             
-          </div>
-        </Tab>
+            <Tab icon={<MdPeople />} value="d"> 
+                <EmployeeFamilyDisplay employeeById={this.props.tabKey} /> 
+            </Tab>
             
             <Tab icon={<HomeIcon />} value="e">
-          <div>
-            <h2 style={styles.headline}>Controllable Tab E</h2>
-            <p>
-              This is another example of a controllable tab. Remember, if you
-              use controllable Tabs, you need to give all of your tabs values or else
-              you wont be able to select them.
-            </p>
-          </div>
-        </Tab>
+              <div>
+                <h2 style={styles.headline}>Address</h2> 
+              </div>
+            </Tab>
             
             <Tab icon={<GoLocation />} value="f">
-          <div>
-            <h2 style={styles.headline}>Controllable Tab F</h2>
-            <p>
-              This is another example of a controllable tab. Remember, if you
-              use controllable Tabs, you need to give all of your tabs values or else
-              you wont be able to select them.
-            </p>
-          </div>
-        </Tab>
+              <div>
+                <h2 style={styles.headline}>Location</h2>
+                <p>
+                  This is another example of a controllable tab. Remember, if you
+                  use controllable Tabs, you need to give all of your tabs values or else
+                  you wont be able to select them.
+                </p>
+              </div>
+            </Tab>
+            
       </Tabs>
     );
   }

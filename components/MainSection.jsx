@@ -1,26 +1,7 @@
- //mainSection
-
-
-import React, { Component, PropTypes } from 'react'; 
-
-import {List, makeSelectable} from 'material-ui/List';
-import MobileTearSheet from './MobileTearSheet'; 
- 
-
-import PageSearch  from './PageSearch';  
-import {fetchUsers} from '../actions/UserActions';
-
-
-let SelectableList = makeSelectable(List);
- 
-const iconStyles={
-    marginRight:15
-};
-
-const menuProps = {
-  desktop: true,
-  disableAutoFocus: true
-};
+ //mainSection 
+import React, { Component, PropTypes } from 'react';  
+import MobileTearSheet from './MobileTearSheet';  
+import PageSearch  from './PageSearch';    
 
 export default class MainSection extends React.Component{
    

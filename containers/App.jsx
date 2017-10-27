@@ -33,8 +33,7 @@ class App extends Component {
       this.getUsersDetail();
   }  
  
-  mainAppCallBack = (keyData) => {
-        // console.log('callBack in App', keyData) ; 
+  mainAppCallBack = (keyData) => { 
           this.setState({keyData:keyData});   
   }   
 
@@ -42,9 +41,7 @@ class App extends Component {
   render() {  
     const {empData, actions } = this.props ;
        
-    const i=(this.state.keyData)-1;
-    //console.log('user',this.state.users[i])
-    //console.log('empdata',this.state.keyData)
+    const i=(this.state.keyData)-1; 
     return (
       <div className="app"> 
           <MuiThemeProvider muiTheme={theme}>
@@ -86,7 +83,7 @@ function mapStateToProps(state,ownProps) {
 //Map the action to props
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(UserActions, dispatch)  
+    actions: bindActionCreators(TodoActions, dispatch)  
   };
 }
 

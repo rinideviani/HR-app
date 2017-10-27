@@ -1,5 +1,4 @@
-// src/actions/catActions.js
-
+ 
 import employeeApi from '../api/employeeApi';
 
 export const fetchSuccess = (employees)=>{

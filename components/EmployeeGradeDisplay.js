@@ -11,8 +11,8 @@ import {
 import FontIcon from 'material-ui/FontIcon';
 import {blue500, red500, greenA200} from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';  
-import EmployeeGradeDisplayContent from './EmployeeGradeDisplayContent'
-
+ 
+import DatePicker from 'material-ui/DatePicker'; 
 
 
 export default class EmployeeGradeDisplay extends React.Component{
@@ -27,7 +27,7 @@ export default class EmployeeGradeDisplay extends React.Component{
     multiSelectable: false,
     enableSelectAll: false,
     deselectOnClickaway: true,
-    showCheckboxes: true,
+    showCheckboxes: false,
     adjustCheckboxes: false,
     height: '300px' 
   };
@@ -35,48 +35,78 @@ export default class EmployeeGradeDisplay extends React.Component{
 
 	render(){
     const tableStyle ={
-      background: "none" ,
-      padding:"70px" ,
-      height:"20px"
+      background: "none" , 
+      height:"20px", 
+      width:"1000px"
     };
-       
- const tableHeaderStyle1={
-  width:"30px" 
-}
-const tableHeaderStyle2={
-  width:"50px" 
-}
-const tableHeaderStyle3={
-  width:"250px" 
-}
-const tableHeaderStyle4={
-  width:"245px" 
-}
-const tableHeaderStyle5={
-  width:"70px" 
-}
+
+
+       //console.log('props',this.props.employeeById)
+ 
     const  employee  = this.props.employeeById;
      
     if ( !employee )
         {
             return (<div></div>) 
-        } 
- 
+        }  
       
     return (
- 
-         
-           <TableRow style={tableStyle} >
-                <TableHeaderColumn style={tableHeaderStyle1} > DS </TableHeaderColumn >
-                 
-                <TableHeaderColumn style={tableHeaderStyle2} > Grade </TableHeaderColumn >
-                <TableHeaderColumn style={tableHeaderStyle3} > Start Date </TableHeaderColumn >
-                <TableHeaderColumn style={tableHeaderStyle4} > End Date </TableHeaderColumn >
-                <TableHeaderColumn style={tableHeaderStyle5} > Action </TableHeaderColumn >
+
+     <Table style={tableStyle} >
+
+         <TableHeader 
+          displaySelectAll={this.state.showCheckboxes}
+            adjustForCheckbox={this.state.showCheckboxes}
+            enableSelectAll={this.state.enableSelectAll}
+          > 
+           <TableRow >
+                <TableHeaderColumn> DS </TableHeaderColumn >
+                <TableHeaderColumn> Grade </TableHeaderColumn >
+                <TableHeaderColumn> Start Date </TableHeaderColumn >
+                <TableHeaderColumn> End Date </TableHeaderColumn >
+                <TableHeaderColumn> Action </TableHeaderColumn >
               </TableRow>
  
-       
+         </TableHeader>
 
+           <TableBody style={tableStyle}
+            displayRowCheckbox={this.state.showCheckboxes}
+            >
+            {this.props.employeeById.gradeHistory.map((emp,index)=>(
+
+              
+              <TableRow key={index}>
+
+                <TableRowColumn> {emp.ds}</TableRowColumn>
+                <TableRowColumn> {emp.currentGrade}</TableRowColumn>
+                <TableRowColumn >   
+                    <DatePicker 
+                      name="endDate"
+                      disabled={false} 
+                      value={new Date(emp.startDate)}
+                    />
+                </TableRowColumn>
+
+                <TableRowColumn  > 
+                     <DatePicker 
+                      name="endDate"
+                      disabled={false} 
+                      value={new Date(emp.endDate)}
+                      />
+
+                </TableRowColumn>
+
+                <TableRowColumn>  
+                  Delete
+                </TableRowColumn> 
+
+              </TableRow>
+
+              ))}
+               
+          </TableBody> 
+
+      </Table>
 
      )
  

@@ -1,55 +1,46 @@
 import React, { Component } from 'react';
 import {ListItem, makeSelectable, List} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar'; 
-import {fetchUsers} from '../actions/UserActions'; 
-
+import {fetchUsers} from '../actions/UserActions';  
 import PropTypes from 'prop-types';
+import wrapState from './SelectedList'
 
-let SelectableList = makeSelectable(List);
+ 
 
 const jumbotronStyle = {
 	backgroundColor: '#337ab7',
-    fontSize: 20 
+    fontSize: 13 
 };
 
 const textStyle = {
 	color: '#fff'  
 };
+
+let SelectableList = makeSelectable(List);
+
+ SelectableList = wrapState(SelectableList);
   
 export default class PageSearch extends Component{ 
     constructor(){
         super();
-        this.state={ inputText: "" };   
+        this.state={ inputText: ""   };   
     }   
 
      handleClick(keyData) {   
      this.setState({keyData:keyData}); 
-     this.props.callBackFromSearchPage(keyData);
-    // console.log('callBackFromSearchPage', keyData)
- 
+     this.props.callBackFromSearchPage(keyData); 
     }
 
-    
-    //for changes the color when clicked
-    
-
-    componentWillMount() {
-      this.setState({
-        selectedIndex: this.state.keyData 
-      });
-    }
-
-    handleRequestChange = (event, index) => {
-      this.setState({
-        selectedIndex: index 
-      });
-    };
-
- //for changes the color when clicked ends here
  
 
+    componentWillReceiveProps(keyData) {
+  this.setState({
+    currentKey: this.state.keyData 
+  });
+}
 
-    render(){  
+    render(){   
+       
       let that=this;
         //console.log('props Search',this.state.keyData);
         let languages = this.props.items, 
@@ -64,7 +55,7 @@ export default class PageSearch extends Component{
     	return(
     		<div>
 	    		<div className="jumbotron text-center" style={jumbotronStyle}>
-				  <h1 style={textStyle}><i className="fa fa-code"></i>  </h1> 
+				  <h1 style={textStyle}><i className="search"></i>  </h1> 
 				  </div>
 	  
 				<div className="container"> 
@@ -81,13 +72,12 @@ export default class PageSearch extends Component{
                 languages.map(function(emp){ 
 
                   return(
-                        <SelectableList defaultValue={1}
+                        <SelectableList defaultValue={0}
                         className="list-group-item" key={emp.id}>           
-                         <ListItem 
-                          value={emp.id}
-                          onClick={that.handleClick.bind(that,emp.id)} 
+                        <ListItem className="listItem"
                           
-
+                          value={that.state.keyData}
+                          onClick={that.handleClick.bind(that,emp.id)}   
                           primaryText={emp.firstName+" "+emp.lastName}
                           secondaryText={
                             <p>
@@ -98,7 +88,8 @@ export default class PageSearch extends Component{
                           }
                           secondaryTextLines={2}
                           leftAvatar={<Avatar src={emp.avatar} />} 
-                          />     
+                        >
+                        </ListItem >     
                       </SelectableList>    
                   ) 
                 }) 
