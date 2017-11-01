@@ -1,9 +1,10 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs'; 
 import EmployeeProfileContainer from './EmployeeProfileContainer'; 
- import EmployeeGradeDisplay from './EmployeeGradeDisplay'
+import EmployeeGradeDisplay from './EmployeeGradeDisplay'
 
- import EmployeeFamilyDisplay from './EmployeeFamilyDisplay'
+import EmployeeFamilyDisplay from './EmployeeFamilyDisplay'
+import EmployeeWorkHistoryContainer from './EmployeeWorkHistoryContainer'
 
 
 //icons
@@ -22,7 +23,10 @@ const styles = {
     paddingTop: 16,
     marginBottom: 12,
     fontWeight: 400 
-  } 
+  } ,
+  tabs:{
+    width:'915px'
+  }
 };
 
  export class EmployeeDetailTab extends React.Component {
@@ -42,30 +46,30 @@ const styles = {
 
    
   render() { 
-     //console.log('callBack in detail tab', this.props.tabKey) ; 
+    // console.log('callBack in detail tab', this.props.tabKey.id) ; 
     return (
-      <Tabs  
+      <Tabs style={styles.tabs} 
         value={this.state.value}
         onChange={this.handleChange} >
         
             <Tab icon={<IoPerson />} value="a">
                <div > 
-                <EmployeeProfileContainer empId={this.props.tabKey} />  
+                <EmployeeProfileContainer employeeById={this.props.employeeById} />  
                </div>   
             </Tab>
 
             <Tab icon={<IoClock />} value="b">
               <div>
-                <h2 style={styles.headline}>Employment History</h2> 
+                <EmployeeWorkHistoryContainer employeeById={this.props.employeeById}/> 
               </div>
             </Tab>
             
             <Tab  icon={<MdInfo />}  value="c"> 
-               <EmployeeGradeDisplay employeeById={this.props.tabKey} /> 
+               <EmployeeGradeDisplay employeeById={this.props.employeeById} /> 
             </Tab>
             
             <Tab icon={<MdPeople />} value="d"> 
-                <EmployeeFamilyDisplay employeeById={this.props.tabKey} /> 
+                <EmployeeFamilyDisplay employeeById={this.props.employeeById} /> 
             </Tab>
             
             <Tab icon={<HomeIcon />} value="e">

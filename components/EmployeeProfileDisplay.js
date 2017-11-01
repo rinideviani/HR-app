@@ -24,50 +24,67 @@ export default class EmployeeProfileDisplay extends React.Component{
         margin : "20px"
       };
 
+      const containerStyle={
+        width:'400px',
+        height:'1000px',
+        margin : "10px"
+      }
+
+      const textStyle={
+      width:'700px' 
+      }
+
  
      return( 
 
           <div style={mainBody}>
            
-              <MobileTearSheet height={1000}>
-               <TextField  
-                disabled={false}
+              <MobileTearSheet   style={containerStyle}  >
+               <TextField 
+               style={textStyle} 
+                 disabled={false}
                  floatingLabelText="First Name"
                  defaultValue={this.props.firstName}
                /><br />
 
                <TextField
+               style={textStyle} 
                 disabled={false}
                 floatingLabelText="Last Name"
                 defaultValue={this.props.lastName} 
              /><br />
 
               <TextField
-                 disabled={false}
+              style={textStyle} 
+                disabled={false}
                 floatingLabelText="Gender"
                 defaultValue={this.props.gender}
              /><br />
 
             <DatePicker  
-               disabled={false}
-              floatingLabelText="DOB" 
-              defaultDate={dob}
+                underlineStyle={textStyle} 
+                disabled={false}
+                floatingLabelText="DOB" 
+                defaultDate={dob}
             /> 
                
             <TextField
-               disabled={false}
+                style={textStyle} 
+                disabled={false}
                 floatingLabelText="Nationality"
                 defaultValue={this.props.nationality}
             /><br /> 
 
             <TextField
-               disabled={false}
+                style={textStyle} 
+                disabled={false}
                 floatingLabelText="Marital Status"
                 defaultValue={this.props.maritalStatus}
             /><br />
 
             <TextField
-               disabled={false}
+                style={textStyle} 
+                disabled={false}
                 floatingLabelText="Phone"
                 defaultValue={this.props.phone}
             /><br />
@@ -75,46 +92,53 @@ export default class EmployeeProfileDisplay extends React.Component{
             </MobileTearSheet>
                 
             <div>  
-             <MobileTearSheet height={1000}>
+             <MobileTearSheet    style={containerStyle} >
 
                <TextField
+                style={textStyle} 
                 disabled={false}
                 floatingLabelText="Subdivision"
                 defaultValue={this.props.subdivision}
              /><br />
 
              <TextField
-                 disabled={false}
+                style={textStyle} 
+                disabled={false}
                 floatingLabelText="Status"
                 defaultValue={this.props.status}
               /><br />
          
               <TextField
+                style={textStyle} 
                 disabled={false}
                 floatingLabelText="Suspend Date"
                 defaultValue={this.props.suspendDate}
              /><br />
 
-             <DatePicker  
-              disabled={false}
-              floatingLabelText="Hired Date" 
-              defaultDate={hiredDate}
+             <DatePicker 
+                underlineStyle={textStyle}  
+                disabled={false}
+                floatingLabelText="Hired Date" 
+                defaultDate={hiredDate}
              /> 
              
               <TextField
-               disabled={false}
+                style={textStyle} 
+                disabled={false}
                 floatingLabelText="Grade"
                 defaultValue={this.props.grade}
               /><br />
 
               <TextField
-               disabled={false}
+                style={textStyle} 
+                disabled={false}
                 floatingLabelText="Division"
                 defaultValue={this.props.division}
               /><br />
 
               <TextField
-               disabled={false}
+                style={textStyle} 
+                disabled={false}
                 floatingLabelText="Email"
                 defaultValue={this.props.email}
               /><br />
@@ -123,7 +147,9 @@ export default class EmployeeProfileDisplay extends React.Component{
             </MobileTearSheet>
           </div>
                
-                <Avatar src={this.props.avatar} />
+                <Avatar 
+                size={80}
+                src={this.props.avatar} />
                  
        </div> 
      

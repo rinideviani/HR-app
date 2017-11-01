@@ -39,9 +39,7 @@ export default class EmployeeGradeDisplay extends React.Component{
       height:"20px", 
       width:"1000px"
     };
-
-
-       //console.log('props',this.props.employeeById)
+ 
  
     const  employee  = this.props.employeeById;
      
@@ -81,7 +79,8 @@ export default class EmployeeGradeDisplay extends React.Component{
                 <TableRowColumn> {emp.currentGrade}</TableRowColumn>
                 <TableRowColumn >   
                     <DatePicker 
-                      name="endDate"
+                      underlineStyle={{display: 'none'}}
+                      name="startDate"
                       disabled={false} 
                       value={new Date(emp.startDate)}
                     />
@@ -89,6 +88,7 @@ export default class EmployeeGradeDisplay extends React.Component{
 
                 <TableRowColumn  > 
                      <DatePicker 
+                      underlineStyle={{display: 'none'}}
                       name="endDate"
                       disabled={false} 
                       value={new Date(emp.endDate)}

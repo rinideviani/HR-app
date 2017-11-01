@@ -5,32 +5,32 @@ export default class EmployeeProfileContainer extends React.Component{
   
   render(){
    // console.log('empId',this.props.empId) 
-   const  employeeId  = this.props.empId;
+   const  employeeById  = this.props.employeeById;
    
-    if ( !employeeId )
+    if (!employeeById)
     {
       return (<div>Please Select...</div>) 
     } 
      
       return (
         <EmployeeProfileDisplay 
-          key={employeeId.id}
-          id={employeeId.id}
-          firstName={employeeId.firstName}
-          lastName={employeeId.lastName}
-          gender={employeeId.gender} 
-          dob={employeeId.dob}
-          nationality={employeeId.nationality}
-          maritalStatus={employeeId.maritalStatus}
-          phone={employeeId.phone}
-          subdivision={employeeId.subdivision}
-          status={employeeId.status}
-          suspendDate={employeeId.suspendDate}
-          hiredDate={employeeId.hiredDate}
-          grade={employeeId.grade}
-          division={employeeId.division}
-          email={employeeId.email}
-          avatar={employeeId.avatar}> 
+          key={employeeById.id}
+          id={employeeById.id}
+          firstName={employeeById.firstName}
+          lastName={employeeById.lastName}
+          gender={employeeById.gender} 
+          dob={employeeById.dob}
+          nationality={employeeById.nationality}
+          maritalStatus={employeeById.maritalStatus}
+          phone={employeeById.phone}
+          subdivision={employeeById.subdivision}
+          status={employeeById.status}
+          suspendDate={employeeById.suspendDate}
+          hiredDate={employeeById.hiredDate}
+          grade={employeeById.grade}
+          division={employeeById.division}
+          email={employeeById.email}
+          avatar={employeeById.avatar}> 
         </EmployeeProfileDisplay> 
       ) 
   }

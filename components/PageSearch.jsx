@@ -3,46 +3,70 @@ import {ListItem, makeSelectable, List} from 'material-ui/List';
 import Avatar from 'material-ui/Avatar'; 
 import {fetchUsers} from '../actions/UserActions';  
 import PropTypes from 'prop-types';
-import wrapState from './SelectedList'
+import wrapState from './SelectedList' 
+import Divider from 'material-ui/Divider';
+ 
+import TextField from 'material-ui/TextField';
+import ActionInfo from 'material-ui/svg-icons/action/info';
 
+import {orange500, blue500} from 'material-ui/styles/colors';
+import IconButton from 'material-ui/IconButton';
+import ActionGrade from 'material-ui/svg-icons/action/grade';
  
 
 const jumbotronStyle = {
-	backgroundColor: '#337ab7',
+	color: '#00B1E1',
     fontSize: 13 
 };
 
 const textStyle = {
-	color: '#fff'  
+	backgroundColor: 'blue'    
+};
+ 
+const individer = {
+  backgroundColor: '#90A4AE'  
+}; 
+
+const styles = { 
+  underlineStyle: {
+    borderColor: 'white',
+    width:'0px'
+  } ,
+  textFieldStyle:{
+    margin:'0px 0px 0px 25px',
+    color: orange500,
+    fontSize:13,
+    paddingLeft:'2px',
+    paddingTop:'2px' ,
+    height:'30px'
+  } 
 };
 
-let SelectableList = makeSelectable(List);
-
+let SelectableList = makeSelectable(List); 
  SelectableList = wrapState(SelectableList);
   
-export default class PageSearch extends Component{ 
+export default class PageSearch extends Component{  
+
     constructor(){
-        super();
-        this.state={ inputText: ""   };   
+    super();
+    this.state={ inputText: "", backgroundColor: '' }; 
+
     }   
 
      handleClick(keyData) {   
      this.setState({keyData:keyData}); 
-     this.props.callBackFromSearchPage(keyData); 
-    }
-
- 
+     this.props.callBackFromSearchPage(keyData);  
+    } 
 
     componentWillReceiveProps(keyData) {
-  this.setState({
+    this.setState({
     currentKey: this.state.keyData 
   });
 }
 
     render(){   
        
-      let that=this;
-        //console.log('props Search',this.state.keyData);
+        let that=this; 
         let languages = this.props.items, 
         inputText = this.state.inputText.trim().toLowerCase();  
         if(inputText.length > 0){
@@ -50,55 +74,57 @@ export default class PageSearch extends Component{
                 const fullName = emp.firstName+emp.lastName;
                 return fullName.toLowerCase().match(inputText);
             }); 
-        } 
-  
-    	return(
-    		<div>
-	    		<div className="jumbotron text-center" style={jumbotronStyle}>
-				  <h1 style={textStyle}><i className="search"></i>  </h1> 
-				  </div>
-	  
-				<div className="container"> 
-				  <div className="row text-center"> 
-				    <div className="col-md-4 col-md-offset-4"> 
-				    	<input className="form-control" 
-               value={this.state.inputText} 
-               onChange={e => this.setState({inputText: e.target.value})}
-               placeholder="Search" /> 
-              <br/>        
-				    	<hr/>  
-              
-              { 
-                languages.map(function(emp){ 
+        }   
+    	   return( 
+    				<div className="container"   > 
+    				   <div style={{backgroundColor:'#7986CB' ,marginBottom:'9px',height:'46px' }}>
+    				    	 <TextField style={styles.textFieldStyle}
+                    id="text-field-search"
+                    hintText='Search'
+                    hintStyle= {{color:'white'}}                     underlineStyle={styles.underlineStyle}
+                    value={this.state.inputText}
+                    onChange={e => this.setState({inputText: e.target.value})}
+                     />  
 
-                  return(
-                        <SelectableList defaultValue={0}
-                        className="list-group-item" key={emp.id}>           
-                        <ListItem className="listItem"
-                          
-                          value={that.state.keyData}
-                          onClick={that.handleClick.bind(that,emp.id)}   
-                          primaryText={emp.firstName+" "+emp.lastName}
-                          secondaryText={
-                            <p>
-                               {emp.grade} , {emp.division} <br />
-                               {emp.location}  ,  {emp.phone}
-                            </p>
+                    <IconButton tooltip="top-left" touch={true} tooltipPosition="top-left">
+                    <ActionGrade />
+                    </IconButton>
+
+
+                   
+                  
+                </div>  
+                  { 
+                     languages.map(function(emp){ 
+
+                      return(
+                            <SelectableList defaultValue={0}
+                             className="list-group-item" key={emp.id}>           
+                              <ListItem className="listItem" 
+
+                               rightIcon={<ActionInfo />}
+                               value={that.props.items.id}
+                               onClick={that.handleClick.bind(that,emp.id)}   
+                               primaryText={emp.firstName+" "+emp.lastName}
                               
-                          }
-                          secondaryTextLines={2}
-                          leftAvatar={<Avatar src={emp.avatar} />} 
-                        >
-                        </ListItem >     
-                      </SelectableList>    
-                  ) 
-                }) 
-              } 
-						  
-				  </div>    
-				</div>
-			</div>
-		</div>
+                               secondaryText={
+                                <p>
+                                   {emp.grade} , {emp.division} <br />
+                                   {emp.location}  ,  {emp.phone}
+                                </p>
+                                  
+                              }
+                              secondaryTextLines={2}
+                              leftAvatar={<Avatar size={50} src={emp.avatar} />} 
+                            >
+                            </ListItem >  
+                            <Divider style={individer} />   
+                          </SelectableList>    
+                      ) 
+                    }) 
+                  }  
+
+		  </div>
   );
 
   }

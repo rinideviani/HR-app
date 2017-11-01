@@ -9,7 +9,7 @@ import {
 } from 'material-ui'; 
 
 import Checkbox from 'material-ui/Checkbox';
-import DatePicker from 'material-ui/DatePicker'; 
+import DatePicker from 'material-ui/DatePicker';  
 
 
 export default class EmployeeFamilyDisplay extends React.Component{
@@ -46,7 +46,8 @@ export default class EmployeeFamilyDisplay extends React.Component{
         underline: ''
       } 
     }; 
-       
+
+
  
     const  employee  = this.props.employeeById;
      
@@ -85,7 +86,8 @@ export default class EmployeeFamilyDisplay extends React.Component{
                       <TableRowColumn> {emp.name}</TableRowColumn>
                       <TableRowColumn> {emp.gender}</TableRowColumn>
                       <TableRowColumn> 
-                          <DatePicker 
+                          <DatePicker  
+                          underlineStyle={{display: 'none'}}
                           name="dob"
                           disabled={false} 
                           value={new Date(emp.dob)}

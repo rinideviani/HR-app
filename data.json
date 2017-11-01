@@ -1,5 +1,5 @@
 { 
-	"emp":[
+	"employee":[
 		{ 	"id":1,
 			"firstName":"Georgia",
 			"lastName":"Bluth",
@@ -50,31 +50,6 @@
 				"type":"Sister",
 				"isActive":true
 				} 
-			],
-			
-			"workHistory":[
-				{
-					"no":"0",
-					"startDate":"1999-9-23",
-					"endDate":"2000-9-23",
-					"company":"MBV",
-					"jobName":".Net Developer",
-					"jobDesc":[ 
-					
-							 [{"no":"0",
-							 "jobDesc":"develop"},
-							 
-							 {"no":"1",
-							 "jobDesc":"deployment"},
-							 
-							 {"no":"2",
-							 "jobDesc":"debugging"}
-							 ] 
-					 
-					]
-					
-				
-				}
 			]
 			
 		},
@@ -133,45 +108,15 @@
 			"workHistory":[
 				{
 					"no":"0",
-					"startDate":"1999-9-23",
-					"endDate":"2000-9-23",
-					"company":"PT.Wirecard",
-					"jobName":"Phyton Developer",
-					"jobDesc":[ 
+					"startDate":"",
+					"endDate":"",
+					"company":"Wirecard",
+					"jobName":"Dev",
+					"jobDesc":[{
+							 "jobDesc1":"develop",
+							 "jobDesc2":"deploy"
 					
-							 [{"no":"0",
-							 "jobDesc":"develop"},
-							 
-							 {"no":"1",
-							 "jobDesc":"deployment"},
-							 
-							 {"no":"2",
-							 "jobDesc":"debugging"}
-							 ] 
-					 
-					]
-					
-				
-				},
-				
-				{
-					"no":"1",
-					"startDate":"2000-9-23",
-					"endDate":"2005-9-23",
-					"company":"Traveloka",
-					"jobName":"Swift Developer",
-					"jobDesc":[ 
-					
-							 [{"no":"0",
-							 "jobDesc":"develop"},
-							 
-							 {"no":"1",
-							 "jobDesc":"deployment"},
-							 
-							 {"no":"2",
-							 "jobDesc":"debugging"}
-							 ] 
-					 
+						}
 					]
 					
 				

@@ -6,12 +6,11 @@ import { Provider } from 'react-redux';
 import App from '../containers/App';
 import {PageNotFound} from '../containers/PageNotFound';
 
-import configureStore from '../store/store';
-//import store from '../store/store'; 
+import configureStore from '../store/store'; 
  
 
 import { Router, Route, hashHistory } from 'react-router' 
-import {loadEmployees} from '../actions/employeeActions'
+import {loadEmployees} from '../actions/employeeActions' 
  
 // ...
 

@@ -1,28 +1,23 @@
+ 
+
+import * as types from '../actions/actionTypes'
+
 export default function reducer(state={
-  users:[],
-  fetching: false,
-  fetched: false,
+  employees:[], 
   error: null
 }, action){
   switch (action.type) {
-    case "FETCH_USERS":{
-      return {...state, fetching: true}
+    case types.LOAD_EMP_SUCCESS:{
+      return action.employees
     }
-    case "FETCH_USERS_FULFILLED":{
-      return {
-              ...state,
-              fetching: false,
-              fetched: true,
-              users:action.payload
-              }
-    }
-     case "FETCH_USERS_REJECTED":{
+   
+     /*case types.LOAD_EMP_FAILED:{
        return {
                 ...state,
                 fetching: false,
                 error: action.payload
               }
-     }
+     }*/
 
   }
   return state;
