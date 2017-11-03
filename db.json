@@ -1,7 +1,7 @@
 { 
 	"emp":[
 		{ 	"id":1,
-			"firstName":"Georgia",
+			"firstName":"Ray",
 			"lastName":"Bluth",
 			"gender":"M",
 			"dob":"1988-11-11",
@@ -80,7 +80,7 @@
 		},
 		
 		{ 	"id":2,
-			"firstName":"Jake",
+			"firstName":"Zake",
 			"lastName":"Weaver",
 			"gender":"M",
 			"dob":"1988-11-21",
@@ -178,7 +178,46 @@
 				}
 			]
 			
-		} 	 
+		} 	,
+
+
+{ 	"id":3,
+			"firstName":"Ansel",
+			"lastName":"Elgort",
+			"gender":"M",
+			"dob":"1987-12-30",
+			"nationality":"Indonesia",
+			"maritalStatus":"Married",
+			"phone":"+6213378736",
+			"subdivision":"CDC",
+			"status":"Full Time",
+			"suspendDate":"-",
+			"hiredDate":"2017-10-13",
+			"grade":"SE-AP",
+			"division":"SWD-Red",
+			"email":"mail@gee.com", 
+			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg",
+			"location":"Jakarta",
+			"gradeHistory":[
+				{	"no":"0",
+					"ds":"DS9",
+					"currentGrade":"SE-AP",
+					"startDate":"2015-1-23",
+					"endDate":"2016-9-23"
+				}  
+			] ,
+			 
+			"familyMember":[
+			 
+			],
+			
+			"workHistory":[
+				 
+				
+			 
+			]
+			
+		} 	 		
 
 
 		

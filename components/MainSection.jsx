@@ -1,12 +1,7 @@
  //mainSection 
 import React, { Component, PropTypes } from 'react';  
 import MobileTearSheet from './MobileTearSheet';  
-import PageSearch  from './PageSearch';   
-
-import AppBar from 'material-ui/AppBar'; 
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import theme from '../src/material_ui_raw_theme_file'
+import PageSearch  from './PageSearch';    
 
 export default class MainSection extends React.Component{
    
