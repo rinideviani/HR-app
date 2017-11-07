@@ -63,7 +63,7 @@ export default class EmployeeGradeDisplay extends React.Component{
                 <TableHeaderColumn> Start Date </TableHeaderColumn >
                 <TableHeaderColumn> End Date </TableHeaderColumn >
                 <TableHeaderColumn> Action </TableHeaderColumn >
-              </TableRow>
+           </TableRow>
  
          </TableHeader>
 
@@ -102,7 +102,7 @@ export default class EmployeeGradeDisplay extends React.Component{
 
               </TableRow>
 
-              ))}
+            ))}
                
           </TableBody> 
 

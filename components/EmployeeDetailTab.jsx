@@ -4,7 +4,7 @@ import EmployeeProfileContainer from './EmployeeProfileContainer';
 import EmployeeGradeDisplay from './EmployeeGradeDisplay'
 
 import EmployeeFamilyDisplay from './EmployeeFamilyDisplay'
-import EmployeeWorkHistoryContainer from './EmployeeWorkHistoryContainer'
+ import EmployeeWorkHistoryDisplay from './EmployeeWorkHistoryDisplay'
 
 
 //icons
@@ -60,7 +60,7 @@ const styles = {
 
             <Tab icon={<IoClock />} value="b">
               <div>
-                <EmployeeWorkHistoryContainer employeeById={this.props.employeeById}/> 
+                 <EmployeeWorkHistoryDisplay  employeeById={this.props.employeeById}/>
               </div>
             </Tab>
             

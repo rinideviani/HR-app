@@ -55,24 +55,14 @@
 			"workHistory":[
 				{
 					"no":"0",
-					"startDate":"1999-9-23",
-					"endDate":"2000-9-23",
+					"startDate":"1999-4-23",
+					"endDate":"2000-3-20",
 					"company":"MBV",
 					"jobName":".Net Developer",
-					"jobDesc":[ 
-					
+					"jobDesc":   
 							 [{"no":"0",
-							 "jobDesc":"develop"},
-							 
-							 {"no":"1",
-							 "jobDesc":"deployment"},
-							 
-							 {"no":"2",
-							 "jobDesc":"debugging"}
-							 ] 
-					 
-					]
-					
+							 "jobDesc":"develop"} 
+							 ]  
 				
 				}
 			]
@@ -133,47 +123,42 @@
 			"workHistory":[
 				{
 					"no":"0",
-					"startDate":"1999-9-23",
+					"startDate":"1999-1-23",
 					"endDate":"2000-9-23",
-					"company":"PT.Wirecard",
+					"company":"PT. Wirecard",
 					"jobName":"Phyton Developer",
-					"jobDesc":[ 
-					
+					"jobDesc":  
 							 [{"no":"0",
-							 "jobDesc":"develop"},
+							 "jobDesc":"develop"} , 
 							 
 							 {"no":"1",
-							 "jobDesc":"deployment"},
+							 "jobDesc":"deploy"},
 							 
 							 {"no":"2",
-							 "jobDesc":"debugging"}
-							 ] 
-					 
-					]
-					
+							 "jobDesc":"debugging"},
+							 
+							  {"no":"3",
+							 "jobDesc":"UI/UX developer"},
+							 
+							 {"no":"4",
+							 "jobDesc":"Tecnical Lead"},
+							 
+							 {"no":"5",
+							 "jobDesc":"DBA"}
+							 ]  
 				
 				},
 				
 				{
 					"no":"1",
-					"startDate":"2000-9-23",
-					"endDate":"2005-9-23",
+					"startDate":"2000-4-23",
+					"endDate":"2005-2-23",
 					"company":"Traveloka",
 					"jobName":"Swift Developer",
-					"jobDesc":[ 
-					
+					"jobDesc":  
 							 [{"no":"0",
-							 "jobDesc":"develop"},
-							 
-							 {"no":"1",
-							 "jobDesc":"deployment"},
-							 
-							 {"no":"2",
-							 "jobDesc":"debugging"}
-							 ] 
-					 
-					]
-					
+							 "jobDesc":"develop"}
+							 ]  
 				
 				}
 			]
@@ -182,29 +167,30 @@
 
 
 { 	"id":3,
-			"firstName":"Ansel",
-			"lastName":"Elgort",
+			"firstName":"Alec",
+			"lastName":"Baldwin",
 			"gender":"M",
-			"dob":"1987-12-30",
-			"nationality":"Indonesia",
+			"dob":"1988-11-21",
+			"nationality":"India",
 			"maritalStatus":"Married",
-			"phone":"+6213378736",
+			"phone":"+6213378544",
 			"subdivision":"CDC",
 			"status":"Full Time",
 			"suspendDate":"-",
 			"hiredDate":"2017-10-13",
-			"grade":"SE-AP",
+			"grade":"SE-PG",
 			"division":"SWD-Red",
 			"email":"mail@gee.com", 
 			"avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg",
 			"location":"Jakarta",
 			"gradeHistory":[
 				{	"no":"0",
-					"ds":"DS9",
-					"currentGrade":"SE-AP",
+					"ds":"DS3",
+					"currentGrade":"SE-JP",
 					"startDate":"2015-1-23",
 					"endDate":"2016-9-23"
-				}  
+				} 
+				  
 			] ,
 			 
 			"familyMember":[
@@ -212,14 +198,29 @@
 			],
 			
 			"workHistory":[
-				 
+			
+			{
+					"no":"0",
+					"startDate":"1999-6-23",
+					"endDate":"2000-12-23",
+					"company":"MBV",
+					"jobName":".Net Developer",
+					"jobDesc":   
+							 [{"no":"0",
+							 "jobDesc":"develop"} 
+							 ]  
 				
-			 
+				}
+				 
 			]
 			
-		} 	 		
+		} 			
 
 
+ 
+	 	 		
+
+	 
 		
 	]
 }

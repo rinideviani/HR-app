@@ -56,7 +56,7 @@ class App extends Component {
   const rightButtons = (
     <div> 
       <IconButton>
-        <GoGear size='25'color='white' /> 
+        <GoGear size='25' color='white' /> 
       </IconButton> 
       <IconButton>
         <FaPowerOff size='25'color='white'/> 

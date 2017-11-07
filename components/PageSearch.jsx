@@ -17,6 +17,12 @@ import ActionOfflinePin from 'material-ui/svg-icons/action/offline-pin';
 import {orange500, blue500} from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import ContentSort from 'material-ui/svg-icons/content/sort';
+import ToggleRadioButtonChecked from 'material-ui/svg-icons/toggle/radio-button-checked'
+ 
+
+import FaArrowRight from 'react-icons/lib/fa/arrow-right'
+
+ 
 
 //lodash 
 import sortBy from 'lodash/sortBy' 
@@ -54,35 +60,41 @@ const styles = {
   }
 };
 
-let SelectableList = makeSelectable(List); 
+  const rightIcons = (
+    <div style={{width: '60px', height:'50px'}}> 
+     <ToggleRadioButtonChecked  style={{size:'30px', height:'50px',width:'30px',color:'#7986CB' }}   />
+        
+    </div>
+  );
+
+  let SelectableList = makeSelectable(List);  
   SelectableList = wrapState(SelectableList);
   
 export default class PageSearch extends Component{  
 
     constructor(){
     super();
-    this.state={inputText: "", dividerColor:'grey' }; 
-    }   
+    this.state={inputText: ""  }; 
+    }    
 
      handleClick(keyData) {   
-     this.setState({keyData:keyData}); 
-     this.props.callBackFromSearchPage(keyData);  
-    } 
- 
-    /*componentWillReceiveProps(keyData) {
+     this.setState({keyData:keyData});  
+     this.props.callBackFromSearchPage(keyData); 
+    }  
+
+     componentWillReceiveProps(keyData) {
       this.setState({
       currentKey: this.state.keyData 
       }); 
-    }*/
+    } 
 
    sortAscending(empName) {  
      this.setState ( 
       {sorted:sortBy(empName, function(o) { return o.firstName; })}
-      );
+      );  
     }
   
-    render(){  
-        
+    render(){   
         let that=this; 
         let languages;
        
@@ -115,26 +127,22 @@ export default class PageSearch extends Component{
                     <IconButton 
                       onClick={this.sortAscending.bind(this,this.props.items)}
                     >
-                      <ContentSort color='white'/>
-
-
-
+                      <ContentSort color='white'/> 
                     </IconButton>
  
                 </div>  
                   { 
-                     languages.map(function(emp,index){ 
- 
-
+                     languages.map(function(emp,index){  
                       return(
-                            <SelectableList defaultValue={0}  
+                            <List defaultValue={0}   
                              className="list-group-item" key={index}>           
                               <ListItem className="listItem" 
 
-                                 rightIcon={<ActionOfflinePin />}
+                                 rightIcon={rightIcons}
 
-                                 value={emp.index} 
-                                 onClick={that.handleClick.bind(that,emp.id)}   
+                                 value= {that.state.keyData} 
+                                 onClick={that.handleClick.bind(that,emp.id)} 
+
                                  primaryText={emp.firstName+" "+emp.lastName}
                                 
                                  secondaryText={
@@ -148,8 +156,8 @@ export default class PageSearch extends Component{
                                 leftAvatar={<Avatar size={50} src={emp.avatar} />} 
                             >
                             </ListItem >  
-                            <Divider style={{backgroundColor: that.state.dividerColor }} />   
-                          </SelectableList>    
+                            <Divider style={{backgroundColor: 'grey' }} />   
+                          </List>    
                       ) 
                     }) 
                   }  
