@@ -95,45 +95,42 @@ export default class EmployeeWorkHistoryDisplay extends React.Component{
 			{this.props.employeeById.workHistory.map((emp,index)=>(
 				
 				<GridList  cellHeight='auto'  style={styles.gridList}  key={index}>  
-					 <div style={styles.leftContainer}>
-					        <Subheader>
-					         
-
-
-                           <TextField   
-					         	underlineStyle={{display: 'none'}}
-			                 	disabled={true}
-			                	floatingLabelText={(new Date(emp.startDate)).toLocaleString("en-us",{month:"long"})
-			                						 +" - "+ 
-			                						 (new Date(emp.endDate)).toLocaleString("en-us",{month:"long"}) 
-			                						}
-			                	defaultValue={(new Date(emp.startDate)).toLocaleString("en-us",{year:"numeric"})
-			                					+" - "+
-			                					(new Date(emp.endDate)).toLocaleString("en-us",{year:"numeric"})
-			                				}
-	             			/> 
-	             			</Subheader> 
-					    
-					     <Divider style={dividerStyle} /> 
-					        <ListItem style={companyName}
-					          primaryText={emp.company}
-					        />
-					        <ListItem
-					           primaryText={emp.jobName}
-					        />
-					  </div>
+						 	<div style={styles.leftContainer}>
+							    <Subheader>  
+		                           <TextField   
+							         	underlineStyle={{display: 'none'}}
+					                 	disabled={true}
+					                	floatingLabelText={(new Date(emp.startDate)).toLocaleString("en-us",{month:"long"})
+					                						 +" - "+ 
+					                						 (new Date(emp.endDate)).toLocaleString("en-us",{month:"long"}) 
+					                						}
+					                	defaultValue={(new Date(emp.startDate)).toLocaleString("en-us",{year:"numeric"})
+					                					+" - "+
+					                					(new Date(emp.endDate)).toLocaleString("en-us",{year:"numeric"})
+					                				}
+			             			/> 
+			             		</Subheader> 
+						    
+						     	<Divider style={dividerStyle} /> 
+						        <ListItem style={companyName}
+						          primaryText={emp.company}
+						        />
+						        <ListItem
+						           primaryText={emp.jobName}
+						        />
+						    </div>
 					       
-					<div style={styles.rightContainer}>
-					       <h3>Job Descriptions</h3> 
- 						 {emp.jobDesc.map((desc,index)=>(
-					         <ListItem   key={index} 
-					          leftIcon={<ToggleRadioButtonChecked style={{height:'23px',width:'17px', color:'#37474F' }}   />}
-					          primaryText={desc.jobDesc} 
-					          /> 
-					    ))}	
-					 </div> 
+						    <div style={styles.rightContainer}>
+							       <h3>Job Descriptions</h3> 
+		 						 {emp.jobDesc.map((desc,index)=>(
+							         <ListItem   key={index} 
+							          leftIcon={<ToggleRadioButtonChecked style={{height:'23px',width:'17px', color:'#37474F' }}   />}
+							          primaryText={desc.jobDesc} 
+							          /> 
+							    ))}	
+						    </div> 
 
-					 <Divider style={bottomLine} />
+					 	<Divider style={bottomLine} />
 				
 					 </GridList>   
 

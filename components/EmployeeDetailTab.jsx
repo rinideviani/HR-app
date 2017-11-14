@@ -1,11 +1,10 @@
 import React from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs'; 
+
 import EmployeeProfileContainer from './EmployeeProfileContainer'; 
-import EmployeeGradeDisplay from './EmployeeGradeDisplay'
-
+import EmployeeGradeDisplay from './EmployeeGradeDisplay' 
 import EmployeeFamilyDisplay from './EmployeeFamilyDisplay'
- import EmployeeWorkHistoryDisplay from './EmployeeWorkHistoryDisplay'
-
+import EmployeeWorkHistoryDisplay from './EmployeeWorkHistoryDisplay'
 
 //icons
 import HomeIcon from 'react-icons/lib/fa/home'

@@ -18,14 +18,10 @@ import {orange500, blue500} from 'material-ui/styles/colors';
 import IconButton from 'material-ui/IconButton';
 import ContentSort from 'material-ui/svg-icons/content/sort';
 import ToggleRadioButtonChecked from 'material-ui/svg-icons/toggle/radio-button-checked'
- 
-
-import FaArrowRight from 'react-icons/lib/fa/arrow-right'
-
- 
 
 //lodash 
 import sortBy from 'lodash/sortBy' 
+
 
 const jumbotronStyle = {
 	color: '#00B1E1',
@@ -74,7 +70,7 @@ export default class PageSearch extends Component{
 
     constructor(){
     super();
-    this.state={inputText: ""  }; 
+    this.state={inputText: "" }; 
     }    
 
      handleClick(keyData) {   
@@ -153,7 +149,7 @@ export default class PageSearch extends Component{
                                     
                                 }
                                 secondaryTextLines={2}
-                                leftAvatar={<Avatar size={50} src={emp.avatar} />} 
+                                leftAvatar={<Avatar size={50} src={'data:image/png;base64,' + emp.avatar} />} 
                             >
                             </ListItem >  
                             <Divider style={{backgroundColor: 'grey' }} />   

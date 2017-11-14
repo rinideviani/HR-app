@@ -7,16 +7,24 @@ import {List, ListItem} from 'material-ui/List';
 import MobileTearSheet from './MobileTearSheet';
 import TextField from 'material-ui/TextField';
 import DatePicker from 'material-ui/DatePicker'; 
-import Avatar from 'material-ui/Avatar'; 
+import Avatar from 'material-ui/Avatar';  
+import AppBar from 'material-ui/AppBar';
+import RaisedButton from 'material-ui/RaisedButton';
+import Dialog from 'material-ui/Dialog';
  
   
 
 export default class EmployeeProfileDisplay extends React.Component{ 
  
-  render(){  
-      //console.log("userprops",this.props); 
+  render(){   
       const hiredDate = new Date(this.props.hiredDate); 
-      const dob = new Date(this.props.dob); 
+      const dob = new Date(this.props.dob);   
+     /* let suspendDate; 
+      if(!this.props.suspendDate){
+        suspendDate= this.props.suspendDate
+      }else
+       suspendDate = new Date(this.props.suspendDate);
+*/
 
       const mainBody ={ 
         display: 'flex',
@@ -26,36 +34,55 @@ export default class EmployeeProfileDisplay extends React.Component{
 
       const containerStyle={
         width:'400px',
-        height:'1000px',
-        margin : "10px"
+        height:'550px',
+        margin : "10px",
+        borderBottom: 'none'
+        
       }
 
       const textStyle={
       width:'700px' 
       }
 
+      const raisedButtonStyle = {
+        margin: 12 
+      };
+
+       const rightButtons = (
+        <div> 
+          <RaisedButton label="CANCEL" secondary={true} style={raisedButtonStyle} />
+          <RaisedButton label="SAVE" secondary={true} style={raisedButtonStyle}  />  
+        </div>
+      );
+
+      const leftButtons=(
+      <div> 
+      </div>
+      );
+
  
      return( 
-
+        <div>
           <div style={mainBody}>
+
            
-              <MobileTearSheet   style={containerStyle}  >
+              <MobileTearSheet style={containerStyle}  >
                <TextField 
-               style={textStyle} 
+                 style={textStyle} 
                  disabled={false}
                  floatingLabelText="First Name"
                  defaultValue={this.props.firstName}
                /><br />
 
                <TextField
-               style={textStyle} 
+                style={textStyle} 
                 disabled={false}
                 floatingLabelText="Last Name"
                 defaultValue={this.props.lastName} 
              /><br />
 
               <TextField
-              style={textStyle} 
+                style={textStyle} 
                 disabled={false}
                 floatingLabelText="Gender"
                 defaultValue={this.props.gender}
@@ -92,7 +119,7 @@ export default class EmployeeProfileDisplay extends React.Component{
             </MobileTearSheet>
                 
             <div>  
-             <MobileTearSheet    style={containerStyle} >
+             <MobileTearSheet style={containerStyle} >
 
                <TextField
                 style={textStyle} 
@@ -108,12 +135,14 @@ export default class EmployeeProfileDisplay extends React.Component{
                 defaultValue={this.props.status}
               /><br />
          
-              <TextField
+           
+                <TextField
                 style={textStyle} 
                 disabled={false}
                 floatingLabelText="Suspend Date"
                 defaultValue={this.props.suspendDate}
-             /><br />
+              /><br />
+             
 
              <DatePicker 
                 underlineStyle={textStyle}  
@@ -141,19 +170,23 @@ export default class EmployeeProfileDisplay extends React.Component{
                 disabled={false}
                 floatingLabelText="Email"
                 defaultValue={this.props.email}
-              /><br />
-                   
-            
+              /><br /> 
+              
             </MobileTearSheet>
-          </div>
-               
+         
+             
+          </div> 
                 <Avatar 
                 size={80}
-                src={this.props.avatar} />
-                 
+                src={'data:image/png;base64,' + this.props.avatar} />
+               
        </div> 
-     
 
-       )
+            <AppBar iconElementRight={rightButtons}
+            iconElementLeft={leftButtons}/> 
+                      
+      </div>
+
+      )
    }
 }

@@ -21,7 +21,7 @@ const styles = {
     overflow: 'hidden' 
   },
   bottomTear: {
-    display: 'block',
+    display: 'none',
     position: 'relative',
     marginTop: -10,
     maxWidth: 360 
