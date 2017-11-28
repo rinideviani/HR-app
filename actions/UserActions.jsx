@@ -5,11 +5,15 @@ const BASE_URL='http://localhost:8000';
 
  
 
-export{fetchUsers};
+export{fetchUsers,submit};
 function fetchUsers(){
 
 	const url=`${BASE_URL}/employees`;
 	return axios.get(url).then(response => response.data);
+ 
+}
 
-  
+
+function submit(value){
+
 }

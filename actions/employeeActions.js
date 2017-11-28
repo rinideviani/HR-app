@@ -3,7 +3,7 @@ import employeeApi from '../api/employeeApi';
 
 export const fetchSuccess = (employees)=>{
 	return{
-		type:'LOAD_EMP_SUCCESS',employees
+		type:'LOAD_EMP',employees
 	}
 };
 

@@ -10,7 +10,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import theme from '../src/material_ui_raw_theme_file'
 
 import { EmployeeDetailTab }  from '../components/EmployeeDetailTab'; 
-import { EmployeeAddForm } from '../components/EmployeeAddForm' 
+import  Form  from '../components/EmployeeAddForm' 
 import {fetchUsers} from '../actions/UserActions'; 
 import * as employeeActions from '../actions/employeeActions'
  
@@ -48,9 +48,10 @@ class App extends Component {
     height:'50px',
     backgroundColor:'#5C6BC0',
     alignItems:'center' 
-    
   }
-    const {empData, actions } = this.props ;
+
+
+  const {empData, actions} = this.props ;
 
 
   const rightButtons = (
@@ -64,7 +65,7 @@ class App extends Component {
        
     </div>
   );
-       
+        
     const i=(this.state.keyData)-1; 
     return (
       <div className="app"> 
@@ -80,13 +81,15 @@ class App extends Component {
                  <MainSection items={this.state.users}
                   callBackFromMainSection={this.mainAppCallBack}/> 
 
-                <div>
-                 <EmployeeDetailTab employeeById={this.props.employees[i]}  />  
+                <div> 
+
+                 <EmployeeDetailTab employeeById={this.state.users[i]}   />
+                  
                 </div>
 
               </div> : 
 
-               <EmployeeAddForm/> 
+               <Form/> 
             }
           </div>
 
@@ -99,7 +102,7 @@ class App extends Component {
 //Map the state to props
 function mapStateToProps(state,ownProps) { 
   return {
-    employees: state.employees 
+    employees: state.employees  
   };
 }
   
@@ -111,7 +114,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-//connect them component to the Redux Store
+//connect the component to the Redux Store
 export default connect(
   mapStateToProps,
   mapDispatchToProps
